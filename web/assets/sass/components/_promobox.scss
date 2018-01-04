@@ -1,0 +1,44 @@
+.section-promo {
+	
+	h3 {
+		font-size: 30px;
+		margin-top: 0;
+	}
+
+	p {
+		font-size: 16px;
+	}
+}
+
+.section-aaa {
+	padding-top: 0;
+	padding-bottom: 0;
+
+	.tb {
+		height: calc(100vh - 90px);
+	}
+
+	.tb__cell {
+		padding: 30px 130px;
+		@extend %bg-primary;
+
+		&:nth-child(2) {
+			background-color: #282829;
+
+			h2 {
+				@extend %color-white;
+			}
+		}
+	}
+
+
+	h2 {
+		margin: 0;
+		font-size: 48px;
+		font-weight: normal;
+
+		~ .listgo-btn {
+			margin-top: 50px;
+		}
+	}
+}

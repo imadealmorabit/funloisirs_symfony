@@ -1,0 +1,31 @@
+.widget_categories {
+
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	> ul > li:first-child > a {
+		padding-top: 0;
+	}
+
+	li {
+		list-style: none;
+
+		span {
+			margin-left: 5px;
+			color: #9a9b9c;
+		}
+
+		&:last-child a {
+			border-bottom: 0;
+		}
+	}
+
+	a {
+		display: block;
+		border-bottom: 1px solid #e9ecef;
+		padding: 10px 0;
+		font-size: 14px;
+	}
+}

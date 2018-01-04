@@ -1,0 +1,80 @@
+.wil-gridratio-wrap {
+	position: relative;
+	min-height: 200px;
+
+	.wil-gridratio__hero {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		background-color: rgba(#000, 0.6);
+
+		.tb {
+			height: 100%;
+		}
+	}
+
+	.wil-gridratio__hero-content {
+		max-width: 700px;
+		margin: auto;
+		text-align: center;
+	}
+
+	.wil-gridratio__hero-title {
+		margin: 0;
+		font-size: 40px;
+		@extend %color-primary;
+
+		+ .wil-gridratio__hero-description {
+			margin-top: 20px;
+		}
+	}
+
+	.wil-gridratio__hero-description {
+		font-size: 14px;
+		line-height: 1.8em;
+		margin-bottom: 0;
+		@extend %color-white;
+	}
+}
+
+.wil-gridratio {
+	margin: 0;
+	width: 100%;
+	position: relative;
+
+	ul li {
+
+		a {
+			background-size: cover;
+			overflow: hidden;
+		}
+
+		.wil-gridratio__caption {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 100%;
+			left: 100%;
+			background-color: rgba(#f5af02, 0.9);
+		}
+
+		.wil-gridratio__inner {
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			display: table;
+
+			h4 {
+				padding: 20px;
+				display: table-cell;
+				vertical-align: middle;
+				font-size: 20px;
+				margin: 0;
+				@extend %color-white;
+			}
+		}
+	}
+}

@@ -1,13 +1,54 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
+<!--[if IE 9 ]> <html class="ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="" lang="en"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>List&amp;Go - Home 1</title>
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i, 600|Poppins:400,600" rel="stylesheet">
+
+    <!-- CSS LIBRARY -->
+    <link rel="stylesheet" type="text/css" href="assets/css/lib/font-awesome.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/lib/font-elegant.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/lib/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/lib/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/lib/perfect-scrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/lib/select2.min.css">
+
+    <!-- PAGE STYLE -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
+
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
+
+</head>
+
     <body>
+        {{ include("::nav.html.twig") }}
+        <div id="wrap-page">
+         {{ include("::header.html.twig") }}
         {% block body %}{% endblock %}
+         {{ include("::footer.html.twig") }}
+         </div>
+
+
+
+    <script type="text/javascript" src="assets/js/lib/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery.owl.carousel.js"></script>
+    <script type="text/javascript" src="assets/js/lib/perfect-scrollbar.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/select2.min.js"></script>
+    <script type="text/javascript" src="assets/js/scripts.js"></script>  
+
+    
         {% block javascripts %}{% endblock %}
     </body>
 </html>

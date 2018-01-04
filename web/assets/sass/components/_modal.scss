@@ -1,0 +1,173 @@
+.wil-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 99999;
+	display: none;
+	transition: all 0.3s ease;
+}
+
+.wil-modal--open {
+	display: block;
+
+	&.wil-modal--fade, 
+	&.wil-modal--zoom {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.wil-modal--zoom {
+		transform: scale(1);
+	}
+}
+
+.wil-modal--fade {
+	opacity: 0;
+	visibility: hidden;
+	display: block;
+}
+
+.wil-modal--zoom {
+	opacity: 0;
+	visibility: hidden;
+	display: block;
+	transform: scale(0.5);
+}
+
+.wil-modal__wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow-y: auto;
+	padding: 20px 15px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	-webkit-overflow-scrolling: touch;
+
+	@media(min-width: 768px) {
+		padding:20px 30px;
+	}
+}
+
+.wil-modal__overlay {
+	z-index: -1;
+	background-color: rgba(#000, 0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.wil-modal__content {
+	margin: auto;
+	position: relative;
+	max-width: 100%;
+
+	.wil-modal__close {
+		position: absolute;
+		top: 0;
+		right: -47px;
+	}
+}
+
+.wil-modal__close {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	width: 47px;
+	height: 47px;
+	cursor: pointer;
+	text-indent: -9999px;
+	background-color: #fff;
+
+	&:after, &:before {
+		content: '';
+		height: 1px;
+		width: 30px;
+		position: absolute;
+		background-color: #000;
+		margin: auto;
+		@extend %transition-all-03s-ease;
+		@extend %absolute-box;
+	}
+
+	&:after {
+		transform: rotate(45deg);
+	}
+
+	&:before {
+		transform: rotate(-45deg);
+	}
+
+	&:hover {
+		&:after, &:before {
+			@extend %bg-primary;
+		}
+	}
+}
+
+// Maginific popup
+.mfp-bg {
+	background-color: #212122;
+	opacity: 0.6;
+}
+
+.popup-gallery__nav {
+	font-size: 40px;
+	@extend %color-white;
+	@extend %centered-vertical;
+
+	&:hover {
+		@extend %color-primary;
+	}
+
+	&.arrow_right  {
+		right: 15px;
+	}
+
+	&.arrow_left  {
+		left: 15px;
+	}
+}
+
+.mfp-bottom-bar {
+	position: absolute;
+	top: auto;
+	bottom: 0;
+	margin-top: 0;
+	background-color: rgba(33,33,34, 0.6);
+	padding: 10px 15px;
+	min-height: 50px;
+}
+
+img.mfp-img {
+	padding: 0;
+}
+
+.mfp-counter {
+	font-size: 16px;
+	right: 10px;
+	top: 15px;
+	@extend %color-primary;
+}
+
+// Report
+.report-form {
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #fff;
+	padding: 30px;
+	width: 1000px;
+
+	@media(min-width: 600px) {
+		max-width: 500px;
+	}
+}

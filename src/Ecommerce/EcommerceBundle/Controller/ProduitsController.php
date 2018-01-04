@@ -4,7 +4,7 @@ namespace Ecommerce\EcommerceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class ProduitsController extends Controller
 {
     public function indexAction()
     {

@@ -1,0 +1,105 @@
+.listgo-btn {
+    display: inline-block;
+    min-width: 196px;
+    line-height: 48px;
+    background-color: #eee;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0;
+    padding: 0px 15px;
+    text-align: center;
+    border-width: 0;
+    cursor: pointer;
+    border-radius: 0;
+    position: relative;
+    white-space: nowrap;
+    @extend %color-title;
+    @extend %font-title;
+
+    &.btn-black {
+        @extend %color-white;
+        @extend %bg-title
+    }
+
+    &.btn-primary {
+        @extend %bg-primary;
+    }
+
+    &:hover {
+        @extend %color-primary;
+        @extend %bg-title;
+    }
+
+    i {
+        margin-right: 3px;
+    }
+
+    &.loading {
+        pointer-events: none;
+        
+        &:before, &:after {
+            content: '';
+            position: absolute;
+        }
+
+        &:after {
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            z-index: 1;
+            background-color: rgba(#fff, 0.5);
+        }
+
+        &:before {
+            height: 20px;
+            width: 20px;
+            background: url(../img/loader.svg) center center;
+            background-size: cover;
+            font-size: 2em;
+            color: rgba(0,0,0,.75);
+            animation: rotate 1s linear infinite;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            z-index: 2;
+        }
+    }
+}
+
+.listgo-btn-icon {
+    display: inline-block;
+    width: 48px;
+    line-height: 48px;
+    background-color: #eee;
+    text-align: center;
+
+    i {
+        @extend %color-base;
+        font-size: 24px;
+        line-height: 48px;
+    }
+
+    &:hover {
+        background-color: #000;
+    }
+}
+
+.listgo-btn--full {
+    width: 100%;
+}
+
+.listgo-btn--sm {
+    font-size: 14px;
+    min-width: auto;
+    line-height: 38px;
+    padding: 0 30px;
+    font-weight: 600;
+}
+
+.listgo-btn--round {
+    border-radius: 50px;
+}

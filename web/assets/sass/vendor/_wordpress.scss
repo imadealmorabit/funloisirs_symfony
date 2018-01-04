@@ -1,0 +1,89 @@
+.alignleft {
+	float: left;
+	margin-bottom: 10px;
+	margin-top: 2px;
+	margin-right: 30px;
+}
+
+.alignright {
+	float: right;
+	margin-top: 2px;
+	margin-left: 30px;
+	margin-bottom: 10px;
+}
+
+.aligncenter {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.alignnone {
+	margin-bottom: 10px;
+}
+
+.wp-caption {
+	max-width: 100%;
+
+	.wp-caption-text {
+		border-left-width: 2px;
+		border-left-style: solid;
+		font-size: 14px;
+		font-style: italic;
+		padding-left: 12px;
+		margin-top: 10px;
+		@extend %border-left-primary;
+	}
+}
+
+.screen-reader-text {
+	display: none;
+}
+
+.media-frame select {
+	padding-top: 0;
+	padding-bottom: 0;
+	line-height: normal;
+}
+
+.media-modal-content .attachments-browser .search,
+.attachment-details .setting .value, .attachment-details .setting input[type=tel], .attachment-details .setting input[type=text], .attachment-details .setting input[type=password], .attachment-details .setting input[type=number], .attachment-details .setting input[type=search], .attachment-details .setting input[type=email], .attachment-details .setting input[type=url], .attachment-details .setting textarea, .media-sidebar .setting .value, .media-sidebar .setting input[type=tel], .media-sidebar .setting input[type=text], .media-sidebar .setting input[type=password], .media-sidebar .setting input[type=number], .media-sidebar .setting input[type=search], .media-sidebar .setting input[type=email], .media-sidebar .setting input[type=url], .media-sidebar .setting textarea,
+.compat-item .field input[type=tel], .compat-item .field input[type=text], .compat-item .field input[type=password], .compat-item .field input[type=number], .compat-item .field input[type=search], .compat-item .field input[type=email], .compat-item .field input[type=url], .compat-item .field textarea {
+	height: auto;
+	line-height: normal;
+	padding: 4px 6px;
+}
+
+.attachment-details .setting, .media-sidebar .setting {
+	font-weight: normal;
+	color: #32373c;
+}
+
+.wp-core-ui .attachment-preview {
+	.thumbnail {
+		padding: 0;
+		margin: 0;
+		border-width: 0;
+		background-color: transparent;
+		border-radius: 0;
+
+		img {
+			max-width: none;
+		}
+	}
+}
+
+.post-password-form {
+	label, input[type="submit"] {
+		display: inline-block;
+		vertical-align: bottom;
+	}
+
+	label {
+		margin-bottom: 0;
+	}
+
+	input[type="submit"] {
+		width: auto;
+		min-width: 100px;
+	}
+}
