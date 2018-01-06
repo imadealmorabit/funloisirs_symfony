@@ -6,8 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class PanierController extends Controller
 {
-    public function indexAction()
+    public function panierAction()
     {
-        return $this->render('EcommerceBundle:Default:index.html.twig');
+        return $this->render('EcommerceBundle:Default/panier/layout:panier.html.twig');
     }
 }

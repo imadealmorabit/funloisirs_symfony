@@ -27,11 +27,11 @@
 
   <body class="woocommerce">
 
-       {{ include("EcommerceBundle:Default:produits/modulesUsed/nav.html.twig") }}
+       {{ include("::modulesUsed/nav.html.twig") }}
        <div id="wrap-page">
-       {{ include("EcommerceBundle:Default:produits/modulesUsed/header.html.twig") }}
+       {{ include("::modulesUsed/header.html.twig") }}
         {% block body %}{% endblock %}
-        {{ include("EcommerceBundle:Default:produits/modulesUsed/footer.html.twig") }}
+        {{ include("::modulesUsed/footer.html.twig") }}
 
 </div>
 

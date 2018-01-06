@@ -5,3 +5,7 @@ produits:
 presentation:
     path:     /produit
     defaults: { _controller: EcommerceBundle:Produits:presentation }
+
+panier:
+    path:     /panier
+    defaults: { _controller: EcommerceBundle:Panier:panier }
