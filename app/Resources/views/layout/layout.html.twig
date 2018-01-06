@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]> <html class="ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="" lang="en"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>List&amp;Go - Shop Single</title>
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i, 600|Poppins:400,600" rel="stylesheet">
+
+    <!-- CSS LIBRARY -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/lib/font-awesome.min.css')}}">
+    
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/lib/font-elegant.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/lib/jquery-ui.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/lib/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/lib/owl.carousel.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/lib/perfect-scrollbar.min.css')}}">
+
+    <!-- PAGE STYLE -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
+    
+</head>
+
+  <body class="woocommerce">
+
+       {{ include("EcommerceBundle:Default:produits/modulesUsed/nav.html.twig") }}
+       <div id="wrap-page">
+       {{ include("EcommerceBundle:Default:produits/modulesUsed/header.html.twig") }}
+        {% block body %}{% endblock %}
+        {{ include("EcommerceBundle:Default:produits/modulesUsed/footer.html.twig") }}
+
+</div>
+
+    <script type="text/javascript" src="{{asset('assets/js/lib/jquery-1.11.2.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/lib/jquery-ui.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/lib/jquery.owl.carousel.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/lib/perfect-scrollbar.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/lib/isotope.pkgd.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/lib/select2.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/scripts.js')}}"></script>  
+
+    
+     
+    
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

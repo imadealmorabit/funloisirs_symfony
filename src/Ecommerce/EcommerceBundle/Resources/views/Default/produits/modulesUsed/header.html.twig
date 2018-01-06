@@ -1,4 +1,4 @@
-<header id="header" class="header header--transparent" data-break-mobile="1400">
+<header id="header" class="header header--background header-responsive" data-break-mobile="1400">
 
             <div class="header__inner">
 
@@ -8,14 +8,14 @@
 
                         <div class="header__logo">
                             <a href="#">
-                                <img src="assets/img/logo.png" alt="">
+                                <img src="{{asset('assets/img/logo.png')}}" alt="">
                             </a>
                         </div>
                         
                         <nav class="header__nav">
 
                             <ul class="menu">
-                                <li class="current-menu-item">
+                                <li>
                                     <a href="#">Home
                                         <i class="fa fa-angle-down"></i>
                                     </a>
@@ -54,7 +54,7 @@
                                         <li><a href="blog-single.html">Blog Single</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="current-menu-item">
                                     <a href="#">Shop <i class="fa fa-angle-down"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="shop.html">Shop</a></li>
