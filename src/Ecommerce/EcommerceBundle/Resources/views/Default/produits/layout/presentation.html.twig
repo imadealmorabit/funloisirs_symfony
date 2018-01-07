@@ -76,7 +76,7 @@
 
                                 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 
-                                <form class="cart" method="post" enctype="multipart/form-data">
+                                <form class="cart" method="post" enctype="multipart/form-data" action="{{path('panier')}}">
         
                                     <div class="quantity">
                                         <input type="text" step="1" min="1" max="" name="quantity" value="1" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric">
@@ -140,7 +140,7 @@
                                                 <div class="product__media">
                                                     <a href="#"><img src="{{asset('assets/img/shop/1.jpg')}}" alt=""></a>
                                                     <span class="onsale">Sale!</span>
-                                                    <a href="#" class="add_to_cart_button">Add To Cart</a>
+                                                    <a href="{{path('panier')}}" class="add_to_cart_button">Add To Cart</a>
                                                 </div>
                                     
                                                 <h2 class="product__title">Three Forks Shelter</h2>
