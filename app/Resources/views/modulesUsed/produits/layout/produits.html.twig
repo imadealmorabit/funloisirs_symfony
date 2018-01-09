@@ -1,0 +1,1166 @@
+{% extends "::layout/layout.html.twig" %}
+{% block body %}
+
+
+
+<section id="main">
+
+            <div class="header-page bg-scroll m-bottom-0" style="background-image:url(assets/img/bg/5.jpg);">
+
+                <div class="container">
+
+                    <div class="header-page__form header-page__form--high">
+
+                        <div class="tb">
+
+                            <div class="tb__cell">
+                                <div class="header-page__banner text-left">
+                                    <h5 class="banner__subtitle">Discover Norway</h5>
+                                    <h2 class="banner__title">Enjoy your dream vacation</h2>
+                                    <a href="listing-detail1.html" class="listgo-btn btn-primary">Learn more <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="tb__cell">
+                                <div class="form-high form-transparent">
+                                
+                                    <div class="tab tab--form">
+                                
+                                        <ul class="tab__nav">
+                                            <li class="active"><a href="#findListing">Find Your Listing</a></li>
+                                            <li><a href="#findWay">Find Your Way</a></li>
+                                        </ul>
+                                
+                                        <div class="tab__content">
+                                
+                                            <div class="tab__panel active" id="findListing">
+                                
+                                                <form action="#" class="form form--listing">
+                                
+                                                    <div class="form-item item--search">
+                                                        <label class="label">What are you looking for?</label>
+                                                        <span class="input-text input-icon-inside">
+                                                            <input type="text">
+                                                            <i class="input-icon icon_search"></i>
+                                                        </span>
+                                                    </div>
+                                                
+                                                    <div class="form-item item--localtion">
+                                                        <label class="label">Location</label>
+                                                        <span class="input-text input-icon-inside">
+                                                            <input type="text">
+                                                            <i class="input-icon icon_pin_alt"></i>
+                                                        </span>
+                                                    </div>
+
+                                                    <div class="form-item item--category">
+                                
+                                                        <label class="label">Category</label>
+                                
+                                                        <span class="input-select2">
+                                
+                                                            <select class="wil-select2">
+                                                                <option>All</option>
+                                                                <option>Food</option>
+                                                                <option>Entertainment</option>
+                                                                <option>Education</option>
+                                                                <option>Hotel &amp; Travel</option>
+                                                            </select>
+                                
+                                                        </span>
+                                
+                                                    </div>
+                                
+                                                    <div class="form-item item--category">
+                                
+                                                        <label class="label">Category</label>
+                                
+                                                        <span class="input-select2">
+                                
+                                                            <select class="wil-select2" multiple="true">
+                                                                <option>All</option>
+                                                                <option>Food</option>
+                                                                <option>Entertainment</option>
+                                                                <option>Education</option>
+                                                                <option>Hotel &amp; Travel</option>
+                                                            </select>
+                                
+                                                        </span>
+                                
+                                                    </div>
+                                
+                                                    <div class="form-item item--settings-more">
+                                
+                                                        <label class="label settings-more__icon"><i class="icon_cog"></i> More settings</label>
+                                
+                                                        <div class="settings-more">
+                                
+                                                            <div class="form-item item--radius">
+                                
+                                                                <label class="label">Radius</label>
+                                
+                                                                <label class="input-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span></span>
+                                                                </label>
+                                                                
+                                                                <span class="label-number">50</span>Km
+                                                                
+                                                                <div class="input-slider">
+                                                                    <input type="hidden">
+                                                                </div>
+                                
+                                                            </div>
+                                
+                                                            <div class="form-item item--tags">
+                                
+                                                                <label class="label">Filter by tags</label>
+                                
+                                                                <label class="input-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span></span>
+                                                                    Reservations
+                                                                </label>
+                                
+                                                                <label class="input-checkbox">
+                                                                    <input type="checkbox"><span></span>
+                                                                    Pets Friendly
+                                                                </label>
+                                
+                                                                <label class="input-checkbox">
+                                                                    <input type="checkbox"><span></span>
+                                                                    Live Music
+                                                                </label>
+                                
+                                                                <label class="input-checkbox">
+                                                                    <input type="checkbox"><span></span>
+                                                                    Accepts Apple Pay
+                                                                </label>
+                                
+                                                                <label class="input-checkbox">
+                                                                    <input type="checkbox"><span></span>
+                                                                    Coupons
+                                                                </label>
+                                
+                                                                <label class="input-checkbox">
+                                                                    <input type="checkbox"><span></span>
+                                                                    Alcohol
+                                                                </label>
+                                
+                                                            </div>
+                                
+                                                            <div class="form-item item--actions text-right">
+                                                                <span class="action-ok">Ok</span>
+                                                                <span class="action-cancel">Cancel</span>
+                                                            </div>
+                                
+                                                        </div>
+                                
+                                                    </div>
+                                
+                                                    <div class="form-item item--submit">
+                                                        <input type="submit" value="Search Now">
+                                                    </div>
+                                
+                                                </form>
+                                
+                                            </div>
+                                
+                                            <div class="tab__panel" id="findWay">
+                                
+                                                <form action="#" class="form form--way">
+                                
+                                                    <div class="form-item item--from">
+                                
+                                                        <label class="label">Form</label>
+                                
+                                                        <span class="input-text input-icon-inside">
+                                                            <input type="text">
+                                                            <i class="input-icon icon_pin_alt"></i>
+                                                        </span>
+                                
+                                                    </div>
+                                                
+                                                    <div class="form-item item--to">
+                                
+                                                        <label class="label">To</label>
+                                
+                                                        <span class="input-text input-icon-inside">
+                                                            <input type="text">
+                                                            <i class="input-icon icon_pin_alt"></i>
+                                                        </span>
+                                
+                                                    </div>
+                                
+                                                    <div class="form-item item--datetime">
+                                
+                                                        <label class="label label--dropdown">
+                                                            <span class="label-dropdown--text">Depart at</span> <i class="arrow_carrot-down"></i>
+                                                            <span class="dropdown">
+                                                                <span data-tagert="#leave-now">Leave now</span>
+                                                                <span class="active" data-tagert="#depart-at">Depart at</span>
+                                                            </span>
+                                                        </label>
+                                
+                                                       <div class="row depart-at active" id="depart-at">
+                                
+                                                           <div class="col-xs-6">
+                                                               <span class="input-text input-icon-inside">
+                                                                    <input type="text" class="input-datepicker" value="07/21/2016">
+                                                                    <i class="input-icon icon_table"></i>
+                                                                </span>
+                                                           </div>
+                                                           
+                                                           <div class="col-xs-6">
+                                                               <span class="input-text input-icon-inside">
+                                                                    <input type="text" value="08:00">
+                                                                    <i class="input-icon icon_clock_alt"></i>
+                                                                </span>
+                                                           </div>
+                                
+                                                       </div>
+
+                                                       <div class="leave-now" id="leave-now">
+                                                           <i class="icon_check"></i> I want to travel at this time
+                                                       </div>   
+                                
+                                                    </div>
+                                
+                                                    <div class="form-item item--settings-more">
+                                
+                                                        <label class="label settings-more__icon">
+                                                            <i class="icon_cog"></i> More settings
+                                                        </label>
+                                
+                                                        <div class="settings-more">
+                                
+                                                            <div class="form-item item--mode">
+                                
+                                                                <label class="label">Choose Travel Mode</label>
+                                
+                                                                <ul class="list-mode">
+                                                                    <li>
+                                                                        <span data-tooltip="Menu"><i class="fa fa-align-left"></i></span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label data-tooltip="Bicycel">
+                                                                            <input type="radio" name="mode" checked="checked">
+                                                                            <i class="fa fa-bicycle"></i>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label data-tooltip="Car">
+                                                                            <input type="radio" name="mode">
+                                                                            <i class="fa fa-car"></i>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li class="disable">
+                                                                        <label data-tooltip="Train">
+                                                                            <!-- <input type="radio" name="mode"> -->
+                                                                            <i class="fa fa-train"></i>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li class="disable">
+                                                                        <label data-tooltip="Plane">
+                                                                            <!-- <input type="radio" name="mode"> -->
+                                                                            <i class="fa fa-plane"></i>
+                                                                        </label>
+                                                                    </li>
+                                
+                                                                </ul>
+                                
+                                                            </div>
+                                
+                                                            <div class="form-item item--avoid-distance">
+                                
+                                                                <div class="row">
+                                
+                                                                    <div class="col-xs-6">
+                                
+                                                                        <div class="form-item item--avoid">
+                                
+                                                                            <label class="label">Avoid</label>
+                                                                            
+                                                                            <label class="input-checkbox">
+                                                                                <input type="checkbox">
+                                                                                <span></span>
+                                                                                Highways
+                                                                            </label>
+                                                                            
+                                                                            <label class="input-checkbox">
+                                                                                <input type="checkbox">
+                                                                                <span></span>
+                                                                                Tolls
+                                                                            </label>
+                                                                            
+                                                                            <label class="input-checkbox">
+                                                                                <input type="checkbox">
+                                                                                <span></span>
+                                                                                Ferries
+                                                                            </label>
+                                
+                                                                        </div>
+                                
+                                                                    </div>
+                                
+                                                                    <div class="col-xs-6">
+                                
+                                                                        <div class="form-item item--distance">
+                                                                            <label class="label">Distance units</label>
+                                                                            
+                                                                            <label class="input-radio">
+                                                                                <input type="radio" name="distance">
+                                                                                <span></span>
+                                                                                Highways
+                                                                            </label>
+                                                                            
+                                                                            <label class="input-radio">
+                                                                                <input type="radio" name="distance">
+                                                                                <span></span>
+                                                                                Tolls
+                                                                            </label>
+                                                                            
+                                                                            <label class="input-radio">
+                                                                                <input type="radio" name="distance">
+                                                                                <span></span>
+                                                                                Ferries
+                                                                            </label>
+                                                                        </div>
+                                
+                                                                    </div>
+                                
+                                                                </div>
+                                                                
+                                                            </div>
+                                
+                                                            <div class="form-item item--actions text-right">
+                                                                <span class="action-ok">Ok</span>
+                                                                <span class="action-cancel">Cancel</span>
+                                                            </div>
+                                
+                                                        </div>
+                                
+                                                    </div>
+                                
+                                                    <div class="form-item item--submit">
+                                                        <input type="submit" value="Search Now">
+                                                    </div>
+                                
+                                                </form>
+                                
+                                            </div>
+                                
+                                        </div>
+                                
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="overlay" style="background-color: rgba(0,108,255, 0.6)"></div>
+
+            </div>
+
+            <!-- Featured -->
+            <div class="section" style="background-color: #f5f5f5">
+
+                <div class="container">
+
+                    <div class="heading-title header-title--1 text-left">
+                
+                        <div class="heading-title__h-group">
+                            <h4 class="heading-title__subtitle">Landmarks</h4>
+                            <h2 class="heading-title__title">Featured</h2>
+                        </div>
+                
+                        <p class="heading-title__description">Sed varius nunc et posuere facilisis. Sed condimentum mi nec libero ullamcorper hendrerit.</p>
+                
+                    </div>
+
+                    <div class="listings listings--box m-bottom-0">
+
+                        <div class="wil_masonry-wrapper wil_masonry-grid" data-col-md="4" data-col-sm="2" data-gap="30">
+                        
+                            <div class="wil_masonry">
+
+                                <div class="grid-sizer"></div>
+                        
+                                <div class="grid-item large">
+                        
+                                    <div class="grid-item__inner">
+                        
+                                        <div class="grid-item__content-wrapper">
+                        
+                                            <div class="listing listing--box">
+                                
+                                                <div class="listing__media bg-scroll" style="background-image: url(assets/img/listing/1.jpg)">
+                                                    
+                                                    <a href="#">
+                                                        <img src="assets/img/listing/1.jpg" alt="">
+                                                    </a>
+                                                    
+                                                    <span class="onfeatued"><i class="fa fa-star-o"></i></span>
+
+                                                    <span class="ongroup">
+                                                        <span class="onads">Ad</span>
+                                                        <span class="onclose">Close</span>
+                                                    </span>
+                                                    
+                                                </div>
+                        
+                                                <div class="listing__header">
+                        
+                                                    <div class="listing__cat">
+                                                        <a href="#">Hotel &amp; Travel</a> 
+                                                    </div>
+                        
+                                                    <h3 class="listing__title"><a href="#">Britannia Country Hotel</a></h3>
+                        
+                                                </div>
+                                                    
+                                                <div class="listing__body">
+                        
+                                                    <div class="listing__author">
+                                                        <a href="#">
+                                                            <img src="assets/img/author-avatar/1.jpg" alt="">
+                                                            <h6>Brian Bennett</h6>
+                                                        </a>
+                                                    </div>
+                        
+                                                    <div class="listing__content">
+                                                        <address>
+                                                            Address: Patricia C. Amedee 4401 Waldeck<br>
+                                                            Phone: +123 987654321
+                                                        </address>
+                                                    </div>
+                        
+                                                    <div class="listgo__rating">
+                                                        <span class="rating__number">4.0</span>
+                                                        <span class="rating__star">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                        </span>
+                                                    </div>
+                        
+                                                    <div class="item__actions">
+                                            
+                                                        <div class="tb">
+                                
+                                                            <div class="tb__cell">
+                                                                <a href="#" data-tooltip="Find Your Way">
+                                                                    <i class="icon_heart_alt"></i>
+                                                                </a> 
+                                                            </div>
+                                
+                                                        </div> 
+                                
+                                                    </div>
+                        
+                                                </div>
+                                                
+                                            </div>  
+                        
+                                        </div>
+                        
+                                    </div>
+                        
+                                </div>
+                        
+                                <div class="grid-item wide">
+                        
+                                    <div class="grid-item__inner">
+                        
+                                        <div class="grid-item__content-wrapper">
+                        
+                                            <div class="listing listing--box">
+                                
+                                                <div class="listing__media bg-scroll" style="background-image: url(assets/img/listing/2.jpg)">
+                                                    
+                                                    <a href="#">
+                                                        <img src="assets/img/listing/2.jpg" alt="">
+                                                    </a>
+                                                   
+                                                </div>
+                        
+                                                <div class="listing__header">
+                        
+                                                    <div class="listing__cat">
+                                                        <a href="#">Singer Star Stage</a> 
+                                                    </div>
+                        
+                                                    <h3 class="listing__title"><a href="#">Singer Star Stage</a></h3>
+                        
+                                                </div>
+
+                                                <div class="listing__body">
+                        
+                                                    <div class="listing__author">
+                                                        <a href="#">
+                                                            <img src="assets/img/author-avatar/1.jpg" alt="">
+                                                            <h6>Brian Bennett</h6>
+                                                        </a>
+                                                    </div>
+                        
+                                                    <div class="listing__content">
+                                                        <address>
+                                                            Address: Patricia C. Amedee 4401 Waldeck<br>
+                                                            Phone: +123 987654321
+                                                        </address>
+                                                    </div>
+                        
+                                                    <div class="listgo__rating">
+                                                        <span class="rating__number">4.0</span>
+                                                        <span class="rating__star">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                        </span>
+                                                    </div>
+                        
+                                                    <div class="item__actions">
+                                            
+                                                        <div class="tb">
+                                
+                                                            <div class="tb__cell">
+                                                                <a href="#" data-tooltip="Find Your Way">
+                                                                    <i class="icon_heart_alt"></i>
+                                                                </a> 
+                                                            </div>
+                                
+                                                        </div> 
+                                
+                                                    </div>
+                        
+                                                </div>
+                        
+                                            </div>
+                        
+                                        </div>
+                        
+                                     </div>
+                        
+                                </div>
+                        
+                                <div class="grid-item">
+                        
+                                    <div class="grid-item__inner">
+                        
+                                        <div class="grid-item__content-wrapper">
+                        
+                                            <div class="listing listing--box">
+                                
+                                                <div class="listing__media bg-scroll" style="background-image: url(assets/img/listing/3.jpg)">
+                                                    
+                                                    <a href="#">
+                                                        <img src="assets/img/listing/3.jpg" alt="">
+                                                    </a>
+                                                   
+                                                </div>
+                        
+                                                <div class="listing__header">
+                        
+                                                    <div class="listing__cat">
+                                                        <a href="#">Restaurant</a> 
+                                                    </div>
+                        
+                                                    <h3 class="listing__title"><a href="#">Restaurant Vintage</a></h3>
+                        
+                                                </div>
+
+                                                <div class="listing__body">
+                        
+                                                    <div class="listing__author">
+                                                        <a href="#">
+                                                            <img src="assets/img/author-avatar/1.jpg" alt="">
+                                                            <h6>Brian Bennett</h6>
+                                                        </a>
+                                                    </div>
+                        
+                                                    <div class="listing__content">
+                                                        <address>
+                                                            Address: Patricia C. Amedee 4401 Waldeck<br>
+                                                            Phone: +123 987654321
+                                                        </address>
+                                                    </div>
+                        
+                                                    <div class="listgo__rating">
+                                                        <span class="rating__number">4.0</span>
+                                                        <span class="rating__star">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                        </span>
+                                                    </div>
+                        
+                                                    <div class="item__actions">
+                                            
+                                                        <div class="tb">
+                                
+                                                            <div class="tb__cell">
+                                                                <a href="#" data-tooltip="Find Your Way">
+                                                                    <i class="icon_heart_alt"></i>
+                                                                </a> 
+                                                            </div>
+                                
+                                                        </div> 
+                                
+                                                    </div>
+                        
+                                                </div>
+                                                
+                                            </div>
+                        
+                                        </div>
+                        
+                                     </div>
+                        
+                                </div>
+                        
+                                <div class="grid-item">
+                        
+                                    <div class="grid-item__inner">
+                        
+                                        <div class="grid-item__content-wrapper">
+                        
+                                            <div class="listing listing--box">
+                                
+                                                <div class="listing__media bg-scroll" style="background-image: url(assets/img/listing/4.jpg)">
+                                                    
+                                                    <a href="#">
+                                                        <img src="assets/img/listing/4.jpg" alt="">
+                                                    </a>
+                          
+                                                </div>
+                        
+                                                <div class="listing__header">
+                        
+                                                    <div class="listing__cat">
+                                                        <a href="#">Education</a> 
+                                                    </div>
+                        
+                                                    <h3 class="listing__title"><a href="#">Wood Houses School</a></h3>
+                        
+                                                </div>
+
+                                                <div class="listing__body">
+                        
+                                                    <div class="listing__author">
+                                                        <a href="#">
+                                                            <img src="assets/img/author-avatar/1.jpg" alt="">
+                                                            <h6>Brian Bennett</h6>
+                                                        </a>
+                                                    </div>
+                        
+                                                    <div class="listing__content">
+                                                        <address>
+                                                            Address: Patricia C. Amedee 4401 Waldeck<br>
+                                                            Phone: +123 987654321
+                                                        </address>
+                                                    </div>
+                        
+                                                    <div class="listgo__rating">
+                                                        <span class="rating__number">4.0</span>
+                                                        <span class="rating__star">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                        </span>
+                                                    </div>
+                        
+                                                    <div class="item__actions">
+                                            
+                                                        <div class="tb">
+                                
+                                                            <div class="tb__cell">
+                                                                <a href="#" data-tooltip="Find Your Way">
+                                                                    <i class="icon_heart_alt"></i>
+                                                                </a> 
+                                                            </div>
+                                
+                                                        </div> 
+                                
+                                                    </div>
+                        
+                                                </div>
+                                                
+                                            </div>
+                        
+                                        </div>
+                        
+                                     </div>
+                        
+                                </div>
+                        
+                            </div>
+                        
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- End / Featured -->
+
+            <!-- Lingting -->            
+            <div class="section">
+
+                <div class="container">
+
+                    <div class="heading-title header-title--1 text-left">
+                
+                        <div class="heading-title__h-group">
+                            <h4 class="heading-title__subtitle">Landmarks</h4>
+                            <h2 class="heading-title__title">New Listings</h2>
+                        </div>
+                
+                        <p class="heading-title__description">Sed varius nunc et posuere facilisis. Sed condimentum mi nec libero ullamcorper hendrerit.</p>
+                
+                    </div>
+
+                    <div class="nav-filter">
+                        <a class="active" href="#">All</a>
+                        <a href="#">Entertainment</a>
+                        <a href="#">Hotel &amp; Travel</a>
+                        <a href="#">Fitness</a>
+                    </div>
+
+                    <div class="listings listings--grid wil-multiple">
+                        
+                        <div class="row">
+
+                        {% for i in 0..8 %}
+                        
+                            <div class="col-sm-6 col-lg-4">
+                    
+                                <div class="listing listing--grid">
+                        
+                                    <div class="listing__media">
+                    
+                                        <a href="#">
+                                            <img src="assets/img/listing/main/1.jpg" alt="">
+                                        </a>
+                    
+                                        <div class="listing__cat">
+                    
+                                            <a href="#">Hotel &amp; Travel</a> 
+                    
+                                            <span class="listing__cat-more">+</span>
+                    
+                                            <ul class="listing__cats">
+                                                <li>
+                                                    <a href="#">Restaurant</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Education</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Entertainment</a>
+                                                </li>
+                                            </ul>
+                    
+                                        </div>
+                    
+                                        <div class="listing__author">
+                                            <a href="#">
+                                                <img src="assets/img/author-avatar/1.jpg" alt="">
+                                            </a>
+                                        </div> 
+                    
+                                        <span class="onfeatued"><i class="fa fa-star-o"></i></span>
+
+                                        <span class="ongroup">
+                                            <span class="onads">Ad</span>
+                                            <span class="onclose">Close</span>
+                                        </span>
+                    
+                                    </div>
+                    
+                                    <div class="listing__body">
+                    
+                                        <h3 class="listing__title"><a href="#">Britannia Country Hotel</a></h3>
+                    
+                                        <div class="listgo__rating">
+                                            <span class="rating__number">4.0</span>
+                                            <span class="rating__star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </span>
+                                        </div>
+                    
+                                        <div class="listing__content">
+                                            <address>
+                                                Address: Patricia C. Amedee 4401 Waldeck<br>
+                                                Phone: +123 987654321
+                                            </address>
+                                        </div>
+                    
+                                        <div class="item__actions">
+                    
+                                            <div class="tb">
+                    
+                                                <div class="tb__cell cell-large">
+                                                    <a href="{{path('presentation')}}">View detail</a>
+                                                </div>
+                    
+                                                <div class="tb__cell">
+                                                    <a href="#" data-tooltip="Find Your Way">
+                                                        <i class="icon_pin_alt"></i>
+                                                    </a>
+                                                </div>
+                    
+                                                <div class="tb__cell">
+                                                    <a href="#" data-tooltip="Find Your Way">
+                                                        <i class="arrow_left-right_alt"></i>
+                                                    </a> 
+                                                </div>
+                    
+                                                <div class="tb__cell">
+                                                    <a href="#" data-tooltip="Find Your Way">
+                                                        <i class="icon_heart_alt"></i>
+                                                    </a> 
+                                                </div>
+                    
+                                            </div> 
+                    
+                                        </div>
+                                      
+                                    </div>
+                                    
+                                </div>
+                    
+                            </div>
+                        {% endfor %}
+                        </div>
+                    </div>        
+                </div>
+            </div>
+            <!-- End / Lingting -->            
+            
+            <!-- Events -->
+            <div class="section bg-repeat-x" style="background-image: url(assets/img/bg/7.jpg); background-color:#f0f0f0;">
+
+                <div class="container">
+
+                    <div class="heading-title header-title--1 heading-title--dark text-center">
+                
+                        <div class="heading-title__h-group">
+                            <h2 class="heading-title__title">Upcoming Events</h2>
+                        </div>
+                
+                        <p class="heading-title__description">Sed varius nunc et posuere facilisis. Sed condimentum mi nec libero ullamcorper hendrerit.</p>
+                
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-8 col-md-offset-2">
+                            
+                            <div class="events-carousel owl-carousel nav-middle">
+
+                                <div class="event-item">
+
+                                    <div class="event-item__media">
+                                        <a href="#"><img src="assets/img/events/1.jpg" alt=""></a>
+                                    </div>
+
+                                    <div class="event-item__body">
+
+                                        <h3 class="event-item__title">We have top executive &amp; start up here</h3>
+
+                                        <div class="event-item__content">
+                                            <p>Integer malesuada sagittis ex, et tempor enim convallis sed. Nunc ut tortor at arcu mollis scelerisque ac vitae lacus, morbi eu odio sit amet lectus vestibulum scelerisque.</p>
+                                        </div>
+
+                                        <div class="event-item__meta">
+
+                                            <span class="event-item__date">
+                                                <i class="icon_table"></i>Date: 03/16/2017 - 05/22/2017
+                                            </span>
+
+                                            <span class="event-item__time">
+                                                <i class="icon_clock_alt"></i>Time: 8:30
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="event-item">
+
+                                    <div class="event-item__media">
+                                        <a href="#"><img src="assets/img/events/2.jpg" alt=""></a>
+                                    </div>
+
+                                    <div class="event-item__body">
+
+                                        <h3 class="event-item__title">Sed Ut Perspiciatis</h3>
+
+                                        <div class="event-item__content">
+                                            <p>Integer malesuada sagittis ex, et tempor enim convallis sed. Nunc ut tortor at arcu mollis scelerisque ac vitae lacus, morbi eu odio sit amet lectus vestibulum scelerisque.</p>
+                                        </div>
+
+                                        <div class="event-item__meta">
+
+                                            <span class="event-item__date">
+                                                <i class="icon_table"></i>Date: 03/16/2017 - 05/22/2017
+                                            </span>
+
+                                            <span class="event-item__time">
+                                                <i class="icon_clock_alt"></i>Time: 8:30
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- End / Events -->
+            
+            <!-- Promobox -->
+            <div class="section section-promo" style="background-color: #f5af02">
+
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-md-9">
+                            <h3>We Do It For You?</h3>
+                            <p>Nam placerat eget arcu ac laoreet. Ut iaculis imperdiet nunc, sit amet sagittis est viverra nec.</p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <a href="#" class="listgo-btn btn-black">Our Services</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- End / Promobox -->
+            
+            <!-- Blog -->
+            <div class="section">
+
+                <div class="container">
+
+                    <div class="heading-title header-title--1 text-left">
+                
+                        <div class="heading-title__h-group">
+                            <h4 class="heading-title__subtitle">Our Blog</h4>
+                            <h2 class="heading-title__title">Latest News</h2>
+                        </div>
+                
+                        <p class="heading-title__description">Morbi sapien tortor lacinia at justo ut semper egestas neque, ivamus tincidunt elit sit amet aliquet varius.</p>
+                
+                    </div>
+
+                    <div class="blog-carousel owl-carousel nav-bottom">
+
+                        <div class="post post__grid">
+                            
+                            <div class="post__media">
+                                <div class="images">
+                                    <a href="#"><img src="assets/img/post/grid/1.jpg" alt=""></a>
+                                </div>
+                                <div class="post__date">
+                                    <span class="day">19</span>
+                                    <span class="month">march</span>
+                                </div>
+                            </div>
+                
+                            <div class="post__body">
+                
+                                <h2 class="post__title"><a href="#">How to Safari in East Africa</a></h2>
+                
+                                <div class="post__meta">
+                
+                                    <span class="post__meta-cat">
+                                        <i class="icon_ribbon_alt"></i>
+                                        <a href="#">Europe</a>
+                                    </span>
+                                    <span class="post__meta-comment">
+                                        <i class="icon_chat"></i>
+                                        <a href="#">03 Comments</a>
+                                    </span>
+                                </div>
+                
+                                <div class="post__entry">
+                                    <p>Liquam convallis metus at tellus porta laoreet ed varius nunc et posuere facilisis. Sed condimentum mi nec libero ullamcorper hendrerit...</p>
+                                </div>
+                
+                                <div class="post__foot">
+                                    <a href="" class="post__more">Read More
+                                        <i class="fa fa-arrow-circle-o-right"></i>
+                                    </a>
+                                </div>
+                
+                            </div>
+                        </div>
+
+                        <div class="post post__grid">
+                            
+                            <div class="post__media">
+                                <div class="images">
+                                    <a href="#"><img src="assets/img/post/grid/2.jpg" alt=""></a>
+                                </div>
+                                <div class="post__date">
+                                    <span class="day">16</span>
+                                    <span class="month">march</span>
+                                </div>
+                            </div>
+                
+                            <div class="post__body">
+                
+                                <h2 class="post__title"><a href="#">Ko Lipe Travel Guide</a></h2>
+                
+                                <div class="post__meta">
+                
+                                    <span class="post__meta-cat">
+                                        <i class="icon_ribbon_alt"></i>
+                                        <a href="#">America</a>
+                                    </span>
+                                    <span class="post__meta-comment">
+                                        <i class="icon_chat"></i>
+                                        <a href="#">03 Comments</a>
+                                    </span>
+                                </div>
+                
+                                <div class="post__entry">
+                                    <p>Liquam convallis metus at tellus porta laoreet ed varius nunc et posuere facilisis. Sed condimentum mi nec libero ullamcorper hendrerit...</p>
+                                </div>
+                
+                                <div class="post__foot">
+                                    <a href="" class="post__more">Read More
+                                        <i class="fa fa-arrow-circle-o-right"></i>
+                                    </a>
+                                </div>
+                
+                            </div>
+                        </div>
+
+                        <div class="post post__grid">
+                            
+                            <div class="post__media">
+                                <div class="images">
+                                    <a href="#"><img src="assets/img/post/grid/3.jpg" alt=""></a>
+                                </div>
+                                <div class="post__date">
+                                    <span class="day">15</span>
+                                    <span class="month">march</span>
+                                </div>
+                            </div>
+                
+                            <div class="post__body">
+                
+                                <h2 class="post__title"><a href="#">Loving Latin America</a></h2>
+                
+                                <div class="post__meta">
+                
+                                    <span class="post__meta-cat">
+                                        <i class="icon_ribbon_alt"></i>
+                                        <a href="#">Africa</a>
+                                    </span>
+                                    <span class="post__meta-comment">
+                                        <i class="icon_chat"></i>
+                                        <a href="#">14 Comments</a>
+                                    </span>
+                                </div>
+                
+                                <div class="post__entry">
+                                    <p>Liquam convallis metus at tellus porta laoreet ed varius nunc et posuere facilisis. Sed condimentum mi nec libero ullamcorper hendrerit...</p>
+                                </div>
+                
+                                <div class="post__foot">
+                                    <a href="" class="post__more">Read More
+                                        <i class="fa fa-arrow-circle-o-right"></i>
+                                    </a>
+                                </div>
+                
+                            </div>
+                        </div>
+
+                        <div class="post post__grid">
+                            
+                            <div class="post__media">
+                                <div class="images">
+                                    <a href="#"><img src="assets/img/post/grid/4.jpg" alt=""></a>
+                                </div>
+                                <div class="post__date">
+                                    <span class="day">11</span>
+                                    <span class="month">march</span>
+                                </div>
+                            </div>
+                
+                            <div class="post__body">
+                
+                                <h2 class="post__title"><a href="#">How to Travel with Your Dog</a></h2>
+                
+                                <div class="post__meta">
+                
+                                    <span class="post__meta-cat">
+                                        <i class="icon_ribbon_alt"></i>
+                                        <a href="#">Asia</a>
+                                    </span>
+                                    <span class="post__meta-comment">
+                                        <i class="icon_chat"></i>
+                                        <a href="#">09 Comments</a>
+                                    </span>
+                                </div>
+                
+                                <div class="post__entry">
+                                    <p>Liquam convallis metus at tellus porta laoreet ed varius nunc et posuere facilisis. Sed condimentum mi nec libero ullamcorper hendrerit...</p>
+                                </div>
+                
+                                <div class="post__foot">
+                                    <a href="" class="post__more">Read More
+                                        <i class="fa fa-arrow-circle-o-right"></i>
+                                    </a>
+                                </div>
+                
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- End / Blog -->
+
+        </section>
+
+
+{% endblock %}
+
+ 

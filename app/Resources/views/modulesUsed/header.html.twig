@@ -7,7 +7,7 @@
                     <div class="header__content">
 
                         <div class="header__logo">
-                            <a href="#">
+                            <a href="{{path('produits')}}">
                                 <img src="{{asset('assets/img/logo.png')}}" alt="">
                             </a>
                         </div>
@@ -39,7 +39,7 @@
                                         <i class="fa fa-angle-down"></i>
                                     </a>
                                     <ul class="sub-menu">
-                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="{{path('page', {'id' : 1})}}">About</a></li>
                                         <li><a href="services.html">Services</a></li>
                                         <li><a href="pricing1.html">Pricing 1</a></li>
                                         <li><a href="pricing2.html">Pricing 2</a></li>
@@ -316,5 +316,7 @@
                 </div>
 
             </div>
+        
+
    
         </header>
