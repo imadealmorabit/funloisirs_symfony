@@ -1,0 +1,94 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+
+<section id="main">
+        
+           
+
+            
+<form action="{{ path("fos_user_security_check") }}" method="post">
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+
+
+            <div class="section" style="background-color: #f5f5f5">
+                
+                <div class="container">
+                    
+                    <div class="row">
+                
+                        <div class="col-lg-8 col-lg-offset-2">
+                        
+                            <h2 class="author-page__title">
+                                <i class="fa fa-credit-card"></i>
+                                Connexion
+                            </h2>
+
+                            <div class="account-page">
+
+                                <div class="form form--profile">
+                                   
+                                    <div class="row">
+
+                                        <div class="col-sm-6">
+
+                                            <div class="form-item">
+
+                                                <label for="username">{{ 'security.login.username'|trans }}</label>
+
+                                                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-sm-6">
+
+                                            <div class="form-item">
+
+                                                <label for="password">{{ 'security.login.password'|trans }}</label>
+
+                                               <input type="password" id="password" name="_password" required="required" />
+
+                                            </div>
+
+                                        </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="profile-actions">
+                                                <input type="submit" class="listgo-btn btn-primary listgo-btn--sm" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}">
+                                              
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="profile-actions">
+                                                <a href="#" class="listgo-btn btn-primary listgo-btn--sm">S'inscrire</a>
+                                              
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                
+                    </div>
+                
+                </div>
+
+            </div>
+        </form>
+
+    </section>
+
+
+
