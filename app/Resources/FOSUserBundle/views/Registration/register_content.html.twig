@@ -1,8 +1,53 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
-    </div>
-{{ form_end(form) }}
+<section id="main">
+        
+            
+            <div class="section" style="background-color: #f5f5f5">
+                
+                <div class="container">
+                    
+                    <div class="row">
+                
+                        <div class="col-lg-6 col-lg-offset-2">
+                        
+                            <h2 class="author-page__title">
+                                <i class="fa fa-credit-card"></i>
+                                Inscription
+                        
+                            </h2>
+
+                            <div class="account-page">
+
+                                <div class="form form--profile">
+                                   
+                                    <div class="row">
+                                        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                                        {{ form_widget(form) }}
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="profile-actions">
+                                                <input type="submit" class="listgo-btn btn-primary listgo-btn--sm" value="{{ 'registration.submit'|trans }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{ form_end(form) }}
+                                </div>
+
+                            </div>
+
+                        </div>
+                
+                    </div>
+                
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+

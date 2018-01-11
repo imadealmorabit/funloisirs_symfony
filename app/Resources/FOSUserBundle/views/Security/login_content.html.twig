@@ -60,20 +60,33 @@
                                         </div>
 
                                     <div class="row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <div class="profile-actions">
                                                 <input type="submit" class="listgo-btn btn-primary listgo-btn--sm" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}">
                                               
                                             </div>
                                         </div>
-                                        <div class="col-sm-6">
+                                        
+                                        <div class="col-sm-4">
                                             <div class="profile-actions">
-                                                <a href="#" class="listgo-btn btn-primary listgo-btn--sm">S'inscrire</a>
+                                                <a href="{{path('fos_user_registration_register')}}" class="listgo-btn btn-primary listgo-btn--sm">S'inscrire</a>
+                                              
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="profile-actions">
+                                                <a href="{{path('fos_user_resetting_request')}}" class="listgo-btn btn-primary listgo-btn--sm">Mot de passe perdu</a>
                                               
                                             </div>
                                         </div>
                                     
                                     </div>
+
+                             
+                                        
+
+                              
+                            
 
                                 </div>
 

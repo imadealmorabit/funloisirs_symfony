@@ -1,11 +1,62 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
-    <div>
-        <label for="username">{{ 'resetting.request.username'|trans }}</label>
-        <input type="text" id="username" name="username" required="required" />
-    </div>
-    <div>
-        <input type="submit" value="{{ 'resetting.request.submit'|trans }}" />
-    </div>
-</form>
+{% trans_default_domain 'FOSUserBundle' %}
+
+<section id="main">
+        
+            
+            <div class="section" style="background-color: #f5f5f5">
+                
+                <div class="container">
+                    
+                    <div class="row">
+                
+                        <div class="col-lg-6 col-lg-offset-2">
+                        
+                            <h2 class="author-page__title">
+                                <i class="fa fa-credit-card"></i>
+                                Mot de passe perdu?
+                        
+                            </h2>
+
+                            <div class="account-page">
+
+                                <div class="form form--profile">
+                                <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+                                    <div class="row">
+                                       
+                                        <div>
+                                            <label for="username">{{ 'resetting.request.username'|trans }}</label>
+                                            <input type="text" id="username" name="username" required="required" />
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <div class="profile-actions">
+                                                <input type="submit" class="listgo-btn btn-primary listgo-btn--sm" value="{{ 'resetting.request.submit'|trans }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </form>
+                                </div>
+
+                            </div>
+
+                        </div>
+                
+                    </div>
+                
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+
