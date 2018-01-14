@@ -1,6 +1,154 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<div class="fos_user_user_show">
-    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
-</div>
+<section id="main">
+        
+            <div class="header-page bg-scroll m-bottom-0" style="background-image:url(assets/img/bg/2.jpg) ">
+
+                <div class="container">
+
+                    <div class="header-page__account">
+                        
+                        
+
+                        <div class="account-subscribe">
+
+                            <span class="followers"><span class="count">13</span> Followers</span>
+
+                            <span class="following"><span class="count">10</span> Following</span>
+
+                            <a href="#" class="listgo-btn listgo-btn--sm">Follow <i class="fa fa-rss"></i></a>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="overlay" style="background-color: rgba(0,108,255, 0.6)"></div>
+
+            </div>
+
+            <div class="section p-top-0 p-bottom-0">
+                <div class="container">
+
+                    <div class="account-nav">
+
+                        <span class="account-nav__toggle">
+                            <i class="fa fa-bars"></i> Dashboards
+                        </span>
+
+                        <ul class="account-nav__menu">
+                            <li><a href="#"><i class="icon_id"></i> Profile</a></li>
+                            <li><a href="#"><i class="icon_documents_alt"></i> My listings (20)</a></li>
+                            <li><a href="#"><i class="icon_lightbulb_alt"></i> Notifications (20)</a></li>
+                            <li><a href="#"><i class="icon_heart_alt"></i> Favourites (12)</a></li>
+                            <li class="active"><a href="#"><i class="icon_creditcard"></i> Billing Details</a></li>
+                            <li class="menu-item-has-children"><a href="#">
+                                <i class="icon_creditcard"></i> Cart</a>
+                                <ul class="submenu">
+                                    <li><a href="#">My Order</a></li>
+                                    <li><a href="#">My Checkout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="account-nav__addlisting">
+                            <a href="#" class="listgo-btn btn-primary listgo-btn--sm listgo-btn--round">+ Add Listing</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="section" style="background-color: #f5f5f5">
+                
+                <div class="container">
+
+                    <h2 class="author-page__title">
+                        <i class="icon_id"></i> Profile 
+                    </h2>
+                    
+                    <div class="row">
+                
+                        <div class="col-md-8 col-md-push-4">
+
+                            <div class="account-page">
+
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. <br><br>
+
+                                But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure.</p>
+                                
+                            </div>
+
+                        </div>
+                
+                        <div class="col-md-4 col-md-pull-8">
+
+                            <div class="sidebar-background sidebar-background--light">
+
+                                <div class="widget widget_author">
+
+                                    <div class="widget_author__header">
+
+                                        <div class="widget_author__avatar">
+                                            <img src="assets/img/author-avatar/4.jpg" alt="">
+                                        </div>
+
+                                        <div class="overflow-hidden">
+                                            <h4 class="widget_author__name">{{ user.username }}</h4>
+                                            <span class="widget_author__role role--admin">
+                                                <i class="fa fa-gitlab"></i> {{ 'profile.show.username'|trans }}
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="widget_author__content">
+
+                                        <ul class="widget_author__address">
+                                            <li>
+                                                <i class="fa fa-map-marker"></i>
+                                                Patricia C. Amedee 4401 Waldeck Street Grapevine Nashville
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-map-marker"></i>
+                                                +123 987654321
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-map-marker"></i>
+                                                wiloke.net
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-map-marker"></i>
+                                                {{ user.email }}
+                                            </li>
+                                        </ul>
+
+                                        <div class="widget_author__social">
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-tumblr"></i></a>
+                                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                
+                    </div>
+                
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+
