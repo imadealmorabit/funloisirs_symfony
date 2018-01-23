@@ -19,9 +19,17 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/lib/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/lib/owl.carousel.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/lib/perfect-scrollbar.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/lib/mapbox.min.css')}}">
 
     <!-- PAGE STYLE -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
+
+
+
+
+    
+   
+
     
 </head>
 
@@ -310,8 +318,10 @@
                 {% endblock %}
    
             {{ include("::modulesUsed/footer.html.twig") }}
+        </div>
+             {% block modal %}{% endblock %}
 
-</div>
+
 
     <script type="text/javascript" src="{{asset('assets/js/lib/jquery-1.11.2.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/lib/jquery-ui.min.js')}}"></script>
@@ -320,10 +330,12 @@
     <script type="text/javascript" src="{{asset('assets/js/lib/isotope.pkgd.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/lib/select2.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/scripts.js')}}"></script>  
-
+    <script type="text/javascript" src="{{asset('assets/js/map/mapbox.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/map/script.map.js')}}"></script>  
+   
     
      
     
-        {% block javascripts %}{% endblock %}
+       
     </body>
 </html>
