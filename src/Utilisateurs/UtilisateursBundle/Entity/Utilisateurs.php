@@ -27,5 +27,10 @@ class Utilisateurs extends BaseUser
         // your own logic
     }
 
+    /**
+     * @ORM\OneToMany(targetEntity="Ecommerce\EcommerceBundle\Entity\Commandes", mappedBy="utilisateur", cascade={"persist","remove"})
+     */
+    private $commandes;
+
     
 }

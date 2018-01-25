@@ -22,6 +22,11 @@ class Commandes
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Utilisateurs\UtilisateursBundle\Entity\Utilisateurs", inversedBy="commandes")
+     */
+    private $utilisateur;
+
+    /**
      * @var bool
      *
      * @ORM\Column(name="valider", type="boolean")
@@ -156,4 +161,3 @@ class Commandes
         return $this->produits;
     }
 }
-
