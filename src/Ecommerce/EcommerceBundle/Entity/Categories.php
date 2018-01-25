@@ -22,6 +22,12 @@ class Categories
     private $id;
 
     /**
+     * @ORM\OneToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Media", cascade={"persist","remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $image;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
@@ -63,4 +69,3 @@ class Categories
         return $this->nom;
     }
 }
-
