@@ -41,4 +41,74 @@ class Utilisateurs extends BaseUser
     private $adresses;
 
     
+
+    /**
+     * Add commande
+     *
+     * @param \Ecommerce\EcommerceBundle\Entity\Commandes $commande
+     *
+     * @return Utilisateurs
+     */
+    public function addCommande(\Ecommerce\EcommerceBundle\Entity\Commandes $commande)
+    {
+        $this->commandes[] = $commande;
+        $commande->setUtilisateur($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove commande
+     *
+     * @param \Ecommerce\EcommerceBundle\Entity\Commandes $commande
+     */
+    public function removeCommande(\Ecommerce\EcommerceBundle\Entity\Commandes $commande)
+    {
+        $this->commandes->removeElement($commande);
+    }
+
+    /**
+     * Get commandes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCommandes()
+    {
+        return $this->commandes;
+    }
+
+    /**
+     * Add adresse
+     *
+     * @param \Ecommerce\EcommerceBundle\Entity\UtilisateursAdresses $adresse
+     *
+     * @return Utilisateurs
+     */
+    public function addAdresse(\Ecommerce\EcommerceBundle\Entity\UtilisateursAdresses $adresse)
+    {
+        $this->adresses[] = $adresse;
+        $adresse->setUtilisateur($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove adresse
+     *
+     * @param \Ecommerce\EcommerceBundle\Entity\UtilisateursAdresses $adresse
+     */
+    public function removeAdresse(\Ecommerce\EcommerceBundle\Entity\UtilisateursAdresses $adresse)
+    {
+        $this->adresses->removeElement($adresse);
+    }
+
+    /**
+     * Get adresses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAdresses()
+    {
+        return $this->adresses;
+    }
 }
