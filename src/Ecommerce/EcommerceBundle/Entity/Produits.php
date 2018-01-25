@@ -28,6 +28,12 @@ class Produits
     private $image;
 
     /**
+     * @ORM\Many ToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Tva", cascade={"persist","remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $tva;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
