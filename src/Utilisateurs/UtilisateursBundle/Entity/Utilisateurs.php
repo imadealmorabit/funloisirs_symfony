@@ -5,6 +5,7 @@ namespace Utilisateurs\UtilisateursBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -24,13 +25,20 @@ class Utilisateurs extends BaseUser
     public function __construct()
     {
         parent::__construct();
+        $this->commandes = new ArrayCollection();
+        $this->adresses = new ArrayCollection();
         // your own logic
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="Ecommerce\EcommerceBundle\Entity\Commandes", mappedBy="utilisateur", cascade={"persist","remove"})
+     * @ORM\OneToMany(targetEntity="Ecommerce\EcommerceBundle\Entity\Commandes", mappedBy="utilisateur", cascade={"remove"})
      */
     private $commandes;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Ecommerce\EcommerceBundle\Entity\UtilisateursAdresses", mappedBy="utilisateur", cascade={"remove"})
+     */
+    private $adresses;
 
     
 }

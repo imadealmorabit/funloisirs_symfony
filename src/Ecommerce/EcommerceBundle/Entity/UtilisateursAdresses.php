@@ -22,6 +22,11 @@ class UtilisateursAdresses
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Utilisateurs\UtilisateursBundle\Entity\Utilisateurs", inversedBy="commandes")
+     */
+    private $utilisateur;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
@@ -280,4 +285,3 @@ class UtilisateursAdresses
         return $this->complement;
     }
 }
-
