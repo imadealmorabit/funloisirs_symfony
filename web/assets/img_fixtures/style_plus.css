@@ -1,0 +1,102 @@
+.skiopen
+{
+	background-color:#F60;
+}
+.skiopen a:hover
+{
+	background-color:#F90;
+}
+/*#valider-sa-ecarte
+{
+	background-color:#F90;
+	padding:3px 8px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font-weight:bold;
+	border:1px solid #F60;
+}*/
+
+#valider-sa-ecarte {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff9900), color-stop(1, #ff6600) );
+	background:-moz-linear-gradient( center top, #ff9900 5%, #ff6600 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9900', endColorstr='#ff6600');
+	background-color:#ff9900;
+	-webkit-border-top-left-radius:5px;
+	-moz-border-radius-topleft:5px;
+	border-top-left-radius:5px;
+	-webkit-border-top-right-radius:5px;
+	-moz-border-radius-topright:5px;
+	border-top-right-radius:5px;
+	-webkit-border-bottom-right-radius:5px;
+	-moz-border-radius-bottomright:5px;
+	border-bottom-right-radius:5px;
+	-webkit-border-bottom-left-radius:5px;
+	-moz-border-radius-bottomleft:5px;
+	border-bottom-left-radius:5px;
+	text-indent:0;
+	border:1px solid #ff6600;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	font-style:normal;
+	height:27px;
+	line-height:27px;
+	width:127px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #c44e00;
+}
+#valider-sa-ecarte:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff6600), color-stop(1, #ff9900) );
+	background:-moz-linear-gradient( center top, #ff6600 5%, #ff9900 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6600', endColorstr='#ff9900');
+	background-color:#ff6600;
+	text-decoration:none !important;
+	
+}#valider-sa-ecarte:active {
+	position:relative;
+	top:1px;
+}
+
+.paraoffre /* texte offre */
+{
+    font-size: 14px;
+    /*color:#06C;*/
+}
+.prixoffre /* prix offre */
+{
+    font-size: 16px;
+    color:#CC3300;
+    font-weight:bold;
+}
+.contactoffre /* prix offre */
+{
+    font-size: 12px;
+    /*color:#06C;*/
+}
+.gratuitoffre
+{
+    color:#CC3300;
+}
+.pourcoffre
+{
+    font-size: 16px;
+    color:#CC3300;
+}
+.texteoffre /* texte offre */
+{
+    font-size: 14px;
+    color:#000;
+}
+.textegoffre /* texte offre */
+{
+    font-size: 14px;
+    color:#000;
+    font-weight:bold;
+}
