@@ -31,7 +31,7 @@
                             <div class="images">
 
                                 <a href="#" class="woocommerce-main-image">
-                                    <img src="{{asset('assets/img/shop/single/1.jpg')}}" alt="">
+                                    <img src="{{produit.image.path}}" alt="{{produit.image.alt}}">
                                 </a>
 
                                 <div class="thumbnails">
@@ -54,7 +54,7 @@
 
                             <div class="summary entry-summary">
 
-                                <h1 class="product_title">Camping Backpack</h1>
+                                <h1 class="product_title">{{produit.nom}}</h1>
 
                                 <div class="woocommerce-product-rating">
 
@@ -71,10 +71,10 @@
                                 </div>
 
                                 <p class="price">
-                                    <span class=" amount"><span>£</span>499.00</span>
+                                    <span class=" amount"><span>£</span>{{produit.prix}}</span>
                                 </p>
 
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                                <p>{{produit.description}}</p>
 
                                 <form class="cart" method="post" enctype="multipart/form-data" action="{{path('panier')}}">
         
@@ -90,10 +90,7 @@
 
                                     <span class="posted_in">
                                         <span>Categories:</span>
-                                        <a href="#">Fashion</a> ,
-                                        <a href="#">Food</a> ,
-                                        <a href="#">Photoshop</a> ,
-                                        <a href="#">wordpress</a>
+                                        <a href="#">{{produit.categorie.nom}}</a>
                                     </span>
                                     
                                 </div>
@@ -115,7 +112,7 @@
                                 </ul>
                                 <div class="tab__content">
                                     <div class="tab__panel active" id="tab-description">
-                                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                                        <p>{{produit.description}}</p>
                                     </div>
                                     <div class="tab__panel" id="tab-reviews">
                                         Review

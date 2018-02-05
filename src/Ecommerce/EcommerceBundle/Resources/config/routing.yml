@@ -3,7 +3,7 @@ produits:
     defaults: { _controller: EcommerceBundle:Produits:produits }
 
 presentation:
-    path:     /produit
+    path:     /produit/{id}
     defaults: { _controller: EcommerceBundle:Produits:presentation }
 
 panier:
