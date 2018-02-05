@@ -1,21 +1,22 @@
+
+
 <nav id="header-mobile" class="header-mobile">
 
         <div class="header-mobile__close"></div>
 
         <ul class="menu">
-            
-            <li>
-                
-                <ul class="sub-menu">
-                    
-                   
-                    <li><a href="{{path('page', {'id' : 1})}}">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-            
-                
-                </ul>
-            </li>
+            <li class="current-menu-item">
+                <a href="#">Nos produits
+                    <i class="fa fa-angle-down"></i>
+                </a>
 
+                <ul class="sub-menu">
+                   {{ render(controller("EcommerceBundle:Categories:menu")) }}
+                </li>
+            
+            
+            
             
         </ul>
+        
     </nav>

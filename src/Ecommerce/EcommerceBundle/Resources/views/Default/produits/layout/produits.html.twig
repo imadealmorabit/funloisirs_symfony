@@ -748,7 +748,7 @@
                         
                         <div class="row">
 
-                        {% for i in 0..8 %}
+                        {% for produit in produits %}
                         
                             <div class="col-sm-6 col-lg-4">
                     
@@ -757,7 +757,7 @@
                                     <div class="listing__media">
                     
                                         <a href="#">
-                                            <img src="assets/img/listing/main/1.jpg" alt="">
+                                            <img src= {{produit.image.path}} alt= {{produit.image.alt}}>
                                         </a>
                     
                                         <div class="listing__cat">
@@ -782,7 +782,7 @@
                     
                                         <div class="listing__author">
                                             <a href="#">
-                                                <img src="assets/img/author-avatar/1.jpg" alt="">
+                                                <img src= {{produit.image.path}} alt= {{produit.image.alt}}>
                                             </a>
                                         </div> 
                     
