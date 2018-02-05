@@ -16,7 +16,10 @@ class ProduitsController extends Controller
     
     public function produitsAction()
     {
-        return $this->render('EcommerceBundle:Default/produits/layout:produits.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $produits = $em->getRepository('EcommerceBundle:Produits')->findAll();
+        
+        return $this->render('EcommerceBundle:Default:produits/layout/produits.html.twig', array('produits' => $produits));
     }
 
     public function presentationAction($id)
