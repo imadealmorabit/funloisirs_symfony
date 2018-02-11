@@ -1,0 +1,8 @@
+<?php
+
+namespace undefined;
+
+interface 
+{
+    
+}
