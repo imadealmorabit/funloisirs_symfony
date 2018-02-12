@@ -1,4 +1,5 @@
 <?php
+
 // src/AppBundle/Entity/User.php
 
 namespace Utilisateurs\UtilisateursBundle\Entity;
@@ -20,8 +21,6 @@ class Utilisateurs extends BaseUser
      */
     protected $id;
 
-    
-
     public function __construct()
     {
         parent::__construct();
@@ -29,6 +28,11 @@ class Utilisateurs extends BaseUser
         $this->adresses = new ArrayCollection();
         // your own logic
     }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Groupe")
+     */
+    private $groupe;
 
     /**
      * @ORM\OneToMany(targetEntity="Ecommerce\EcommerceBundle\Entity\Commandes", mappedBy="utilisateur", cascade={"remove"})
@@ -40,10 +44,8 @@ class Utilisateurs extends BaseUser
      */
     private $adresses;
 
-    
-
     /**
-     * Add commande
+     * Add commande.
      *
      * @param \Ecommerce\EcommerceBundle\Entity\Commandes $commande
      *
@@ -58,7 +60,7 @@ class Utilisateurs extends BaseUser
     }
 
     /**
-     * Remove commande
+     * Remove commande.
      *
      * @param \Ecommerce\EcommerceBundle\Entity\Commandes $commande
      */
@@ -68,7 +70,7 @@ class Utilisateurs extends BaseUser
     }
 
     /**
-     * Get commandes
+     * Get commandes.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -78,7 +80,7 @@ class Utilisateurs extends BaseUser
     }
 
     /**
-     * Add adresse
+     * Add adresse.
      *
      * @param \Ecommerce\EcommerceBundle\Entity\UtilisateursAdresses $adresse
      *
@@ -93,7 +95,7 @@ class Utilisateurs extends BaseUser
     }
 
     /**
-     * Remove adresse
+     * Remove adresse.
      *
      * @param \Ecommerce\EcommerceBundle\Entity\UtilisateursAdresses $adresse
      */
@@ -103,7 +105,7 @@ class Utilisateurs extends BaseUser
     }
 
     /**
-     * Get adresses
+     * Get adresses.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
