@@ -113,4 +113,52 @@ class Utilisateurs extends BaseUser
     {
         return $this->adresses;
     }
+
+    /**
+     * Set groupe
+     *
+     * @param \Ecommerce\EcommerceBundle\Entity\Groupe $groupe
+     *
+     * @return Utilisateurs
+     */
+    public function setGroupe(\Ecommerce\EcommerceBundle\Entity\Groupe $groupe = null)
+    {
+        $this->groupe = $groupe;
+
+        return $this;
+    }
+
+    /**
+     * Get groupe
+     *
+     * @return \Ecommerce\EcommerceBundle\Entity\Groupe
+     */
+    public function getGroupe()
+    {
+        return $this->groupe;
+    }
+
+    /**
+     * Add adress
+     *
+     * @param \Ecommerce\EcommerceBundle\Entity\UtilisateursAdresses $adress
+     *
+     * @return Utilisateurs
+     */
+    public function addAdress(\Ecommerce\EcommerceBundle\Entity\UtilisateursAdresses $adress)
+    {
+        $this->adresses[] = $adress;
+
+        return $this;
+    }
+
+    /**
+     * Remove adress
+     *
+     * @param \Ecommerce\EcommerceBundle\Entity\UtilisateursAdresses $adress
+     */
+    public function removeAdress(\Ecommerce\EcommerceBundle\Entity\UtilisateursAdresses $adress)
+    {
+        $this->adresses->removeElement($adress);
+    }
 }

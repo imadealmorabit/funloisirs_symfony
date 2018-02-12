@@ -1,4 +1,5 @@
 <?php
+
 namespace Utilisateurs\UtilisateursBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\AbstractFixture;
@@ -21,7 +22,7 @@ class UtilisateursAdressesData extends AbstractFixture implements OrderedFixture
         $adresse1->setVille('Le Havre');
         $adresse1->setComplement('face à l\'église');
         $manager->persist($adresse1);
-        
+
         $adresse2 = new UtilisateursAdresses();
         $adresse2->setUtilisateur($this->getReference('utilisateur3'));
         $adresse2->setNom('premier');
@@ -33,12 +34,12 @@ class UtilisateursAdressesData extends AbstractFixture implements OrderedFixture
         $adresse2->setVille('Le Havre');
         $adresse2->setComplement('face à la plage');
         $manager->persist($adresse2);
-        
+
         $manager->flush();
     }
-    
+
     public function getOrder()
     {
-        return 6;
+        return 7;
     }
 }

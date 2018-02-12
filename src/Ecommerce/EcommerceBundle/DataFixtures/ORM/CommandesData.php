@@ -1,4 +1,5 @@
 <?php
+
 namespace Ecommerce\EcommerceBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\AbstractFixture;
@@ -17,10 +18,10 @@ class CommandesData extends AbstractFixture implements OrderedFixtureInterface
         $commande1->setReference('1');
         $commande1->setProduits(array('0' => array('1' => '2'),
                                       '1' => array('2' => '1'),
-                                      '2' => array('4' => '5')
+                                      '2' => array('4' => '5'),
                                 ));
         $manager->persist($commande1);
-        
+
         $commande2 = new Commandes();
         $commande2->setUtilisateur($this->getReference('utilisateur3'));
         $commande2->setValider('1');
@@ -28,7 +29,7 @@ class CommandesData extends AbstractFixture implements OrderedFixtureInterface
         $commande2->setReference('2');
         $commande2->setProduits(array('0' => array('1' => '2'),
                                       '1' => array('2' => '1'),
-                                      '2' => array('4' => '5')
+                                      '2' => array('4' => '5'),
                                 ));
         $manager->persist($commande2);
 
@@ -37,6 +38,6 @@ class CommandesData extends AbstractFixture implements OrderedFixtureInterface
 
     public function getOrder()
     {
-        return 7;
+        return 8;
     }
 }
