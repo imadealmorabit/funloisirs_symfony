@@ -32,7 +32,7 @@
                                 
                                         <ul class="tab__nav">
                                             <li class="active"><a href="#findListing">Devenir membre</a></li>
-                                            <li><a href="#findWay">Se connecter</a></li>
+                                            <li><a href="#findWay">Rechercher</a></li>
                                         </ul>
                                 
                                         <div class="tab__content">
@@ -59,38 +59,13 @@
                                 
                                             <div class="tab__panel" id="findWay">
                                 
-                                                <form action="#" class="form form--way">
-                                
-                                                    <div class="form-item item--from">
-                                
-                                                        <label class="label">Adresse E-mail</label>
-                                
-                                                        <span class="input-text">
-                                                            <input type="text">
-                                                            <i class="input-icon"></i>
-                                                        </span>
-                                
-                                                    </div>
-                                                
-                                                    <div class="form-item item--to">
-                                
-                                                        <label class="label">Mot de Passe</label>
-                                
-                                                        <span class="input-text">
-                                                            <input type="text">
-                                                            <i class="input-icon"></i>
-                                                        </span>
-                                
-                                                    </div>
-                                
-                                                   
+                                               
 
-                                
-                                                    <div class="form-item item--submit">
-                                                        <input type="submit" value="Valider">
-                                                    </div>
-                                
-                                                </form>
+
+
+
+
+                                                {{ render(controller("EcommerceBundle:Produits:recherche")) }}  
                                 
                                             </div>
                                 
