@@ -71,7 +71,7 @@
                                 </div>
 
                                 <p class="price">
-                                    <span class=" amount"><span>£</span>{{produit.prix}}</span>
+                                    <span class=" amount"><span>£</span>{{produit.prix|tva(produit.tva.multiplicate)}} €</span>
                                 </p>
 
                                 <p>{{produit.description}}</p>
