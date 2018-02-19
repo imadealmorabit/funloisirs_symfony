@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/lib/owl.carousel.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/lib/perfect-scrollbar.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/lib/mapbox.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/lib/select2.min.css')}}">
 
     <!-- PAGE STYLE -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
@@ -212,6 +213,23 @@
                                     </div>
                                  
                                 </div>
+
+
+
+
+                                 <div class="header__user">
+                                    <div class="tb">
+                                        <div class="tb__cell">
+                                            
+                                                <a href="{{ path("fos_user_security_login") }}"><img src="assets/img/icon-user.png" alt=""></a>
+                                            
+                                        </div>
+                                    </div>
+                                  
+                                </div>
+
+
+
 
                            
                                   {% block utilisateurs %}{% endblock %}
