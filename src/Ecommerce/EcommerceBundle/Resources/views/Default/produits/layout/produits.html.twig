@@ -131,6 +131,9 @@
                                     <div class="listing__body">
                     
                                         <h3 class="listing__title"><a href="#">{{produit.nom}}</a></h3>
+                                        <p class="price">
+                                                <span class=" amount"><span>£</span>{{produit.prix|tva(produit.tva.multiplicate)}} €</span>
+                                        </p>
                     
                                         <div class="listgo__rating">
                                             <span class="rating__number">4.0</span>
