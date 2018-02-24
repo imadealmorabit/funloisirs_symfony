@@ -106,8 +106,8 @@
                                     <input type="text" name="coupon_code" class="input-text" value="" placeholder="Coupon code"> 
                                     <input type="submit" class="button" name="apply_coupon" value="Apply Coupon">
                                 </div>
-                                
-                                <input type="submit" class="button" name="update_cart" value="Commander">
+            
+                                <a href="{{path('produits')}}" class="button">Continuer mes achats</a>
 
                             </td>
 
@@ -193,7 +193,7 @@
                                         </td>                                 
                                     </tr>
                                      {% endfor %}
-                                     
+
                                     <tr class="order-total">
                                         <th>Total TTC</th>
 
@@ -209,7 +209,7 @@
                             </table>
 
                             <div class="wc-proceed-to-checkout">
-                                <a href="{{path('validation')}}" class="checkout-button button alt wc-forward">Proceed to Checkout</a>
+                                <a href="{{path('validation')}}" class="checkout-button button alt wc-forward">Valider mon panier</a>
                             </div>
 
                         </div>

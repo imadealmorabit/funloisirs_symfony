@@ -52,4 +52,13 @@ class ProduitsRepository extends \Doctrine\ORM\EntityRepository
         ->getResult()
       ;
     }
+
+    public function findWithMedia()
+    {
+        $qb = $this->createQueryBuilder('p')
+              ->andWhere('p.disponible = 1')
+              ->leftJoin('p.image', 'im')
+              ->addSelect('im')
+              ;
+    }
 }

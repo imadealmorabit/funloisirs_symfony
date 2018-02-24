@@ -80,6 +80,8 @@
 
                                 <p>{{produit.description}}</p>
 
+                            {% if panier[produit.id] is not defined %}
+
                                 <form class="cart" action="{{ path('ajouter', { 'id' : produit.id }) }}" method="get">
         
                                     <select name="qte" class="quantity">
@@ -91,6 +93,14 @@
                                     <button type="submit" class="single_add_to_cart_button button alt">Ajouter au panier</button>
 
                                 </form>
+
+                            {% else %}
+                                <div>
+                                    <a href="{{path('panier')}}" class="btn btn-primary">La Carte est deja dans votre panier</a>
+                                </div>
+                            {% endif %}
+                            <br>
+
 
                                 <div class="product_meta">
 

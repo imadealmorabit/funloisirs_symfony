@@ -153,10 +153,12 @@
                                                 <div class="tb__cell cell-large">
                                                     <a href="{{ path('presentation', { 'id' : produit.id }) }}">Plus d'infos</a>
                                                 </div>
-                    
-                                                <div class="tb__cell cell-large">
-                                                    <a href="{{ path('ajouter', { 'id' : produit.id }) }}">Ajouter au panier</a>
-                                                </div>
+
+                                                 {% if panier[produit.id] is not defined %}
+                                                     <div class="tb__cell cell-large">
+                                                        <a href="{{ path('ajouter', { 'id' : produit.id }) }}">Ajouter au panier</a>
+                                                     </div>
+                                                 {% endif %}
                     
                                               
                                             </div> 
