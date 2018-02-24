@@ -14,7 +14,7 @@ class PanierController extends Controller
         if (array_key_exists($id, $panier)) {
             unset($panier[$id]);
             $session->set('panier', $panier);
-            $session->getFlashBag()->add('success', 'Article supprime avec succes');
+            $session->getFlashBag()->add('success', 'Carte supprimee avec succes');
         }
 
         return $this->redirectToRoute('panier');
@@ -42,7 +42,7 @@ class PanierController extends Controller
                 $panier[$id] = 1;
             }
 
-            $session->getFlashBag()->add('success', 'Article ajoute avec succes');
+            $session->getFlashBag()->add('success', 'Carte ajoutee avec succes');
         }
         $session->set('panier', $panier);
 

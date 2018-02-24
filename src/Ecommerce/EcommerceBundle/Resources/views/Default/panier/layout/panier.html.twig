@@ -33,9 +33,22 @@
 
             </div>
 
+
+
+           
+
             <div class="section wo_shop">
 
+
+            
+
                 <div class="container">
+
+                 {% for message in app.session.flashbag.get('success') %}
+                    <div class="alert alert-success">
+                        <center> {{ message }} </center>
+                    </div>
+                 {% endfor %}
 
                     <table class="shop_table cart">
 
