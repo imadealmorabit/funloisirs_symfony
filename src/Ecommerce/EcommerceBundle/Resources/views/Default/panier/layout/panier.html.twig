@@ -1,8 +1,13 @@
 {% extends "::layout/layout.html.twig" %}
+
+{% set totalHT = 0 %}
+{% set totalTTC = 0%}
+{% set refTva = {} %}
+
+
+
+
 {% block body %}
-
-
-
 <section id="main">
 
             <div class="header-page bg-scroll p-top-0" style="background-image:url(assets/img/bg/12.jpg) ">
@@ -37,7 +42,7 @@
                                 <th class="product-remove">&nbsp;</th>
                                 <th class="product-thumbnail">&nbsp;</th>
                                 <th class="product-name">Produit</th>
-                                <th class="product-price">Prix</th>
+                                <th class="product-price">Prix unitaire</th>
                                 <th class="product-quantity">Quantite</th>
                                 <th class="product-subtotal">Total HT</th>
                             </tr>
@@ -80,6 +85,10 @@
                             </td>
                         </form>
                         </tr>
+
+                        {% set totalHT = totalHT + (produit.prix * panier[produit.id]) %}
+                        {% set totalTTC = totalTTC + (produit.prix * panier[produit.id]) | tva(produit.tva.multiplicate) %}
+                        
 
                         {% endfor %}
 
@@ -168,18 +177,25 @@
                                 <tbody>
 
                                     <tr class="cart-subtotal">
-                                        <th>Subtotal</th>
+                                        <th>Total HT</th>
+                                        <td data-title="Subtotal">
+                                            <span class="amount"><span>£</span>{{totalHT}}</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="cart-subtotal">
+                                        <th>TVA</th>
                                         <td data-title="Subtotal">
                                             <span class="amount"><span>£</span>126.00</span>
                                         </td>
                                     </tr>
 
                                     <tr class="order-total">
-                                        <th>Total</th>
+                                        <th>Total TTC</th>
 
                                         <td data-title="Total">
                                             <strong>
-                                                <span class="amount"><span>£</span>126.00</span>
+                                                <span class="amount"><span>£</span>{{totalTTC}} €</span>
                                             </strong> 
                                         </td>
                                     </tr>

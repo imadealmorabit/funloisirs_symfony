@@ -119,11 +119,7 @@
                     
                                         <span class="onfeatued"><i class="fa fa-star-o"></i></span>
 
-                                        <span class="ongroup">
-                                            <span class="onads">Ad</span>
-                                            <span class="onclose">Close</span>
-                                        </span>
-                    
+                                       
                                     </div>
                     
                                     <div class="listing__body">
@@ -155,27 +151,14 @@
                                             <div class="tb">
                     
                                                 <div class="tb__cell cell-large">
-                                                    <a href="{{ path('presentation', { 'id' : produit.id }) }}">View detail</a>
+                                                    <a href="{{ path('presentation', { 'id' : produit.id }) }}">Plus d'infos</a>
                                                 </div>
                     
-                                                <div class="tb__cell">
-                                                    <a href="#" data-tooltip="Find Your Way">
-                                                        <i class="icon_pin_alt"></i>
-                                                    </a>
+                                                <div class="tb__cell cell-large">
+                                                    <a href="{{ path('ajouter', { 'id' : produit.id }) }}">Ajouter au panier</a>
                                                 </div>
                     
-                                                <div class="tb__cell">
-                                                    <a href="#" data-tooltip="Find Your Way">
-                                                        <i class="arrow_left-right_alt"></i>
-                                                    </a> 
-                                                </div>
-                    
-                                                <div class="tb__cell">
-                                                    <a href="#" data-tooltip="Find Your Way">
-                                                        <i class="icon_heart_alt"></i>
-                                                    </a> 
-                                                </div>
-                    
+                                              
                                             </div> 
                     
                                         </div>
