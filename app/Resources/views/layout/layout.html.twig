@@ -222,7 +222,11 @@
 
 
                            
-                                  {% block utilisateurs %}{% endblock %}
+                                   {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                      {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}   
+                                   {% else %}
+                                      {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig' %}   
+                                   {% endif %}
                                   
                                 
 

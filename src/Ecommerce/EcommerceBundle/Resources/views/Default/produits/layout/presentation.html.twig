@@ -80,13 +80,15 @@
 
                                 <p>{{produit.description}}</p>
 
-                                <form class="cart" method="post" enctype="multipart/form-data" action="{{path('panier')}}">
+                                <form class="cart" method="post" enctype="multipart/form-data" action="{{ path('ajouter', { 'id' : produit.id }) }}" method="get">
         
-                                    <div class="quantity">
-                                        <input type="text" step="1" min="1" max="" name="quantity" value="1" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
+                                    <select name="qte" class="quantity">
+                                         {% for i in 1..10 %}
+                                             <option value="{{ i }}">{{ i }}</option>
+                                         {% endfor %}
+                                    </select>
 
-                                    <button type="submit" class="single_add_to_cart_button button alt">Add to cart</button>
+                                    <button type="submit" class="single_add_to_cart_button button alt">Ajouter au panier</button>
 
                                 </form>
 
