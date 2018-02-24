@@ -25,20 +25,9 @@
                                                     Profile
                                                 </a>
                                             </li>
-                                            <li class="user__menu__item">
-                                                <a href="#">
-                                                    <i class="fa fa-list"></i>
-                                                    My listings
-                                                    <span class="count">12</span>
-                                                </a>
-                                            </li>
-                                            <li class="user__menu__item">
-                                                <a href="#">
-                                                    <i class="fa fa-heart-o"></i>
-                                                    Favourites
-                                                    <span class="count">12</span>
-                                                </a>
-                                            </li>
+                        
+                                             {{ render(controller("EcommerceBundle:Panier:menu")) }}
+
                                             <li class="user__menu__item">
                                                 <a href="{{path('fos_user_profile_edit')}}">
                                                     <i class="fa fa-edit"></i>
