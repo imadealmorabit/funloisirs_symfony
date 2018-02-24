@@ -5,6 +5,9 @@ services:
       tags:
         - { name: twig.extension }
 
-    
+    montantTva:
+      class: Ecommerce\EcommerceBundle\Twig\Extension\MontantTvaExtension
+      tags:
+        - { name: twig.extension }
 
     

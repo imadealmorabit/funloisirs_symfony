@@ -3,7 +3,9 @@
 {% set totalHT = 0 %}
 {% set totalTTC = 0%}
 {% set refTva = {} %}
-
+{% for produit in produits%}
+    {% set refTva = refTva|merge({ ('%' ~ produit.tva.valeur) : 0}) %}
+{% endfor%}
 
 
 
@@ -88,7 +90,7 @@
 
                         {% set totalHT = totalHT + (produit.prix * panier[produit.id]) %}
                         {% set totalTTC = totalTTC + (produit.prix * panier[produit.id]) | tva(produit.tva.multiplicate) %}
-                        
+                        {% set refTva = refTva|merge({ ('%' ~ produit.tva.valeur) : refTva['%' ~ produit.tva.valeur] + (produit.prix * panier[produit.id]) | montantTva(produit.tva.multiplicate)}) %}
 
                         {% endfor %}
 
@@ -105,7 +107,7 @@
                                     <input type="submit" class="button" name="apply_coupon" value="Apply Coupon">
                                 </div>
                                 
-                                <input type="submit" class="button" name="update_cart" value="Update Cart" disabled="">
+                                <input type="submit" class="button" name="update_cart" value="Commander">
 
                             </td>
 
@@ -170,7 +172,7 @@
 
                         <div class="cart_totals">
     
-                            <h2>Cart Totals</h2>
+                            <h2>Totals</h2>
 
                             <table class="shop_table">
 
@@ -183,19 +185,21 @@
                                         </td>
                                     </tr>
 
+                                     {% for key,tva in refTva %}
                                     <tr class="cart-subtotal">
-                                        <th>TVA</th>
+                                        <th>TVA {{key}} :</th>
                                         <td data-title="Subtotal">
-                                            <span class="amount"><span>£</span>126.00</span>
-                                        </td>
+                                            <span class="amount"><span>£</span>{{tva}}</span>
+                                        </td>                                 
                                     </tr>
-
+                                     {% endfor %}
+                                     
                                     <tr class="order-total">
                                         <th>Total TTC</th>
 
                                         <td data-title="Total">
                                             <strong>
-                                                <span class="amount"><span>£</span>{{totalTTC}} €</span>
+                                                <span class="amount"><span>£</span>{{totalTTC}}</span>
                                             </strong> 
                                         </td>
                                     </tr>
