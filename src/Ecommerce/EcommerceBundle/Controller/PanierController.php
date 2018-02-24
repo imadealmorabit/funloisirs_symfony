@@ -7,6 +7,19 @@ use Symfony\Component\HttpFoundation\Request;
 
 class PanierController extends Controller
 {
+    public function supprimerAction($id, Request $request)
+    {
+        $session = $request->getSession();
+        $panier = $session->get('panier');
+        if (array_key_exists($id, $panier)) {
+            unset($panier[$id]);
+            $session->set('panier', $panier);
+            $session->getFlashBag()->add('success', 'Article supprime avec succes');
+        }
+
+        return $this->redirectToRoute('panier');
+    }
+
     public function ajouterAction($id, Request $request)
     {
         $session = $request->getSession();
