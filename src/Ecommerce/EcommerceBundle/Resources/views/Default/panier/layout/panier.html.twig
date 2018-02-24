@@ -36,16 +36,18 @@
                             <tr>
                                 <th class="product-remove">&nbsp;</th>
                                 <th class="product-thumbnail">&nbsp;</th>
-                                <th class="product-name">Product</th>
-                                <th class="product-price">Price</th>
-                                <th class="product-quantity">Quantity</th>
-                                <th class="product-subtotal">Total</th>
+                                <th class="product-name">Produit</th>
+                                <th class="product-price">Prix</th>
+                                <th class="product-quantity">Quantite</th>
+                                <th class="product-subtotal">Total HT</th>
                             </tr>
                         </thead>
 
-                        {% for i in 0..2 %}
+                        {% for produit in produits %}
 
                         <tr class="cart_item">
+
+                        <form action="{{path('ajouter', {'id': produit.id})}}" method="GET">
 
                             <td class="product-remove">
                                 <a href="#" class="remove" title="Remove this item">×</a>
@@ -56,25 +58,27 @@
                             </td>
 
                             <td class="product-name" data-title="Product">
-                                <a href="#">Pencil Case</a>                 
+                                <a href="#">{{produit.nom}}</a>                 
                             </td>
 
                             <td class="product-price">
-                                <span class="amount"><span>£</span>18.00</span>                   
+                                <span class="amount"><span>£</span>{{produit.prix}}</span>                   
                             </td>
 
                             <td class="product-quantity">
 
-                                <div class="quantity">
-                                    <input type="number" step="1" min="0" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*">
-                                </div>
+                               <select name="qte" class="quantity" onChange="this.form.submit()">
+                                    {% for i in 1..10 %}
+                                        <option value="{{ i }}" {% if i == panier[produit.id] %} selected="selected" {% endif %}>{{ i }}</option>
+                                    {% endfor %}
+                               </select>&nbsp;
 
                             </td>
 
                             <td class="product-subtotal" data-title="Total">
-                                <span class="amount"><span>£</span>18.00</span>                   
+                                <span class="amount"><span>£</span>{{produit.prix * panier[produit.id]}}</span>                   
                             </td>
-
+                        </form>
                         </tr>
 
                         {% endfor %}
