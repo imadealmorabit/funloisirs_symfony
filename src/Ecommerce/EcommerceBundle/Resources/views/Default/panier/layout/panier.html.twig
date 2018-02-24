@@ -50,6 +50,12 @@
                             </tr>
                         </thead>
 
+                        {% if produits | length == 0 %}
+                            <tr>
+                                <td colspan="6"><h3><center>Aucune Carte dans votre panier</center></h3></td>
+                            <tr>
+                        {% endif %}
+
                         {% for produit in produits %}
 
                         <tr class="cart_item">
@@ -170,6 +176,8 @@
                             </div>
                         </div>
 
+                        {% if produits | length != 0 %}
+
                         <div class="cart_totals">
     
                             <h2>Totals</h2>
@@ -213,6 +221,8 @@
                             </div>
 
                         </div>
+
+                        {% endif %}
 
                     </div>
 
