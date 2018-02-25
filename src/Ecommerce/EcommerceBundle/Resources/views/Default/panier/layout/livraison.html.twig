@@ -87,7 +87,7 @@
                             {% for adresse in utilisateur.adresses %}
                             <label class="radio">
                                 <input type="radio" name="livraison" value="{{ adresse.id }}" {% if loop.index0 == 0 %}checked="checked"{% endif %}>
-                                {{ adresse.adresse }}, {{ adresse.cp }} {{ adresse.ville }} - {{ adresse.pays }} 
+                                {{ adresse.adresse }}, {{ adresse.cp }} {{ adresse.ville }} - {{ adresse.pays }} <a href="{{ path('livraisonAdresseSuppression', { 'id' : adresse.id }) }}"><i class="icon-trash"></i></a>
                                 <br />{{ adresse.prenom }} {{ adresse.nom }}
                             </label>
                             {% endfor %}
@@ -98,7 +98,7 @@
                             {% for adresse in utilisateur.adresses %}
                             <label class="radio">
                                 <input type="radio" name="facturation" value="{{ adresse.id }}" {% if loop.index0 == 0 %}checked="checked"{% endif %}>
-                                {{ adresse.adresse }}, {{ adresse.cp }} {{ adresse.ville }} - {{ adresse.pays }} 
+                                {{ adresse.adresse }}, {{ adresse.cp }} {{ adresse.ville }} - {{ adresse.pays }} <a href="{{ path('livraisonAdresseSuppression', { 'id' : adresse.id }) }}"><i class="icon-trash"></i></a>
                                 <br />{{ adresse.prenom }} {{ adresse.nom }}
                             </label>
                             {% endfor %}

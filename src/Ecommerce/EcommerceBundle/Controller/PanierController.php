@@ -80,6 +80,21 @@ class PanierController extends Controller
                 array('produits' => $produits, 'panier' => $session->get('panier')));
     }
 
+    public function adresseSuppressionAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('EcommerceBundle:UtilisateursAdresses')->find($id);
+
+        if ($this->getUser() != $entity->getUtilisateur() || !$entity) {
+            return $this->redirect($this->generateUrl('livraison'));
+        }
+
+        $em->remove($entity);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('livraison'));
+    }
+
     public function livraisonAction(Request $request)
     {
         $utilisateur = $this->getUser();
