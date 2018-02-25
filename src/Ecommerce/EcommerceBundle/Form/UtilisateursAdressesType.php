@@ -20,8 +20,8 @@ class UtilisateursAdressesType extends AbstractType
                 ->add('cp')
                 ->add('pays')
                 ->add('ville')
-                ->add('complement')
-                //->add('utilisateur');
+                ->add('complement', null, array('required' => false));
+        //->add('utilisateur');
     }
 
     /**

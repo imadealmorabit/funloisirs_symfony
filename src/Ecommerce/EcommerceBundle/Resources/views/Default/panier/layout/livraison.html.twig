@@ -77,13 +77,51 @@
                 <div class="container">
                     
                     <div class="row">
+
+
+                    <div class="col-lg-4">
+                         {% if utilisateur.adresses|length != 0 %}
+                        <form action="{{ path('validation') }}" method="POST">
+                            
+                            <h4>Adresse de livraison</h4>
+                            {% for adresse in utilisateur.adresses %}
+                            <label class="radio">
+                                <input type="radio" name="livraison" value="{{ adresse.id }}" {% if loop.index0 == 0 %}checked="checked"{% endif %}>
+                                {{ adresse.adresse }}, {{ adresse.cp }} {{ adresse.ville }} - {{ adresse.pays }} 
+                                <br />{{ adresse.prenom }} {{ adresse.nom }}
+                            </label>
+                            {% endfor %}
+                            
+                            <br /><br />
+                            
+                            <h4>Adresse de facturation</h4>
+                            {% for adresse in utilisateur.adresses %}
+                            <label class="radio">
+                                <input type="radio" name="facturation" value="{{ adresse.id }}" {% if loop.index0 == 0 %}checked="checked"{% endif %}>
+                                {{ adresse.adresse }}, {{ adresse.cp }} {{ adresse.ville }} - {{ adresse.pays }} 
+                                <br />{{ adresse.prenom }} {{ adresse.nom }}
+                            </label>
+                            {% endfor %}
+                            
+                            <br />
+                            
+                            <button class="btn btn-primary">Valider mes adresses</button>
+                        </form>
+                        {% endif %}
+                    </div>
+
+
+
                 
-                        <div class="col-lg-8 col-lg-offset-2">
+                        <div class="col-lg-8">
                         
                             <h2 class="author-page__title">
                                 <i class="fa fa-credit-card"></i>
-                                Billing Address
+                                Ajouter une nouvelle Adresse
                             </h2>
+
+                        <form action = "{{path('livraison')}}" method = "POST">
+                    
 
                             <div class="account-page">
 
@@ -92,170 +130,75 @@
                                     <div class="row">
 
                                         <div class="col-sm-6">
-
-                                            <div class="form-item">
-
-                                                <label class="label">First name <sup>*</sup></label>
-
-                                                <span class="input-text">
-                                                    <input type="text">
-                                                </span>
-
-                                            </div>
-
+                                            {{ form_row(form.nom) }}
                                         </div>
+                                
+
+                                  
 
                                         <div class="col-sm-6">
-
-                                            <div class="form-item">
-
-                                                <label class="label">Last name <sup>*</sup></label>
-
-                                                <span class="input-text">
-                                                    <input type="text">
-                                                </span>
-
-                                            </div>
-
+                                            {{ form_row(form.prenom) }}
                                         </div>
+                                     </div>
+                                     <br>
 
-                                        <div class="col-sm-12">
-
-                                            <div class="form-item">
-
-                                                <label class="label">Company Name</label>
-
-                                                <span class="input-text">
-                                                    <input type="text">
-                                                </span>
-
-                                            </div>
-
-                                        </div>
+               
+                                      
+                                    <div class="row">
 
                                         <div class="col-sm-6">
-
-                                            <div class="form-item">
-
-                                                <label class="label">Address <sup>*</sup></label>
-
-                                                <span class="input-text">
-                                                    <input type="text">
-                                                </span>
-
-                                            </div>
-
+                                            {{ form_row(form.telephone) }}
                                         </div>
+                                
+
+                                  
 
                                         <div class="col-sm-6">
-
-                                            <div class="form-item">
-
-                                                <label class="label">Email <sup>*</sup></label>
-
-                                                <span class="input-text">
-                                                    <input type="text">
-                                                </span>
-
-                                            </div>
-
+                                            {{ form_row(form.adresse) }}
                                         </div>
+                                     </div>
+                                     <br>
 
-                                        <div class="col-sm-12">
-
-                                            <div class="form-item">
-
-                                                <label class="label">Country <sup>*</sup></label>
-
-                                                <span class="input-select">
-                                                    <select>
-                                                        <option>USA</option>
-                                                        <option>Thai Lan</option>
-                                                        <option>Viet Nam</option>
-                                                        <option>Nhat Ban</option>
-                                                    </select>
-                                                </span>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-sm-12">
-
-                                            <div class="form-item">
-
-                                                <label class="label">Address <sup>*</sup></label>
-
-                                                <span class="input-text">
-                                                    <input type="text" placeholder="Street address">
-                                                </span>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-sm-12">
-
-                                            <div class="form-item">
-
-                                                <span class="input-text">
-                                                    <input type="text">
-                                                </span>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-sm-12">
-
-                                            <div class="form-item">
-
-                                                <label class="label">Town / City <sup>*</sup></label>
-
-                                                <span class="input-text">
-                                                    <input type="text">
-                                                </span>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-sm-6">
-
-                                            <div class="form-item">
-
-                                                <label class="label">State <sup>*</sup></label>
-
-                                                <span class="input-select">
-                                                    <select>
-                                                        <option value="Select an option">Select an option</option>
-                                                    </select>
-                                                </span>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-sm-6">
-
-                                            <div class="form-item">
-
-                                                <label class="label">ZIP <sup>*</sup></label>
-
-                                                <span class="input-text">
-                                                    <input type="text">
-                                                </span>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
+                                    
 
                                     <div class="row">
-                                        <div class="col-sm-12">
+
+                                        <div class="col-sm-6">
+                                            {{ form_row(form.pays) }}
+                                        </div>
+                                
+
+                                  
+
+                                        <div class="col-sm-6">
+                                            {{ form_row(form.ville) }}
+                                        </div>
+                                     </div>
+                                     <br>
+                                     <div class="row">
+
+                                        <div class="col-sm-6">
+                                            {{ form_row(form.cp) }}
+                                        </div>
+                                
+
+                                  
+
+                                        <div class="col-sm-6">
+                                            {{ form_row(form.complement) }}
+                                        </div>
+                                     </div>
+                                     <br>
+
+                                    
+                                
+
+    
+
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-6">
                                             <div class="profile-actions">
-                                                <input type="submit" class="listgo-btn btn-primary listgo-btn--sm" value="Save Address">
+                                                <input type="submit" class="listgo-btn btn-primary listgo-btn--sm" value="Ajouter">
                                             </div>
                                         </div>
                                     </div>
@@ -263,6 +206,8 @@
                                 </div>
 
                             </div>
+
+                         {{form_end(form)}}
 
                         </div>
                 

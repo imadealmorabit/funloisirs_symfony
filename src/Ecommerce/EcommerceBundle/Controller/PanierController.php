@@ -80,12 +80,27 @@ class PanierController extends Controller
                 array('produits' => $produits, 'panier' => $session->get('panier')));
     }
 
-    public function livraisonAction()
+    public function livraisonAction(Request $request)
     {
+        $utilisateur = $this->getUser();
+        //var_dump($utilisateur);
+        //die();
         $entity = new UtilisateursAdresses();
-        $form = $this->createForm(new UtilisateursAdressesType(), $entity);
+        $form = $this->createForm(UtilisateursAdressesType::class, $entity);
 
-        return $this->render('EcommerceBundle:Default/panier/layout:livraison.html.twig', array('form' => $form->createView()));
+        if ($request->isMethod('POST')) {
+            $form->handleRequest($request);
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $entity->setUtilisateur($utilisateur);
+                $em->persist($entity);
+                $em->flush();
+
+                return $this->redirect($this->generateUrl('livraison'));
+            }
+        }
+
+        return $this->render('EcommerceBundle:Default/panier/layout:livraison.html.twig', array('utilisateur' => $utilisateur, 'form' => $form->createView()));
     }
 
     public function validationAction()
