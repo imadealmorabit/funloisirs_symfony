@@ -5,29 +5,27 @@ namespace Ecommerce\EcommerceBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Ecommerce\EcommerceBundle\Entity\Produits;
+use Ecommerce\EcommerceBundle\Entity\Categories;
 use Ecommerce\EcommerceBundle\Form\RechercheType;
 
 class ProduitsController extends Controller
 {
-    public function categorieAction($categorie)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $produits = $em->getRepository('EcommerceBundle:Produits')->byCategorie($categorie);
-
-        return $this->render('EcommerceBundle:Default:produits/layout/produits.html.twig', array('produits' => $produits));
-    }
-
-    public function produitsAction(Request $request)
+    public function produitsAction(Request $request, Categories $categorie = null)
     {
         $session = $request->getSession();
         $em = $this->getDoctrine()->getManager();
+
+        if ($categorie != null) {
+            $produits = $em->getRepository('EcommerceBundle:Produits')->byCategorie($categorie);
+        } else {
+            $produits = $em->getRepository('EcommerceBundle:Produits')->findBy(array('disponible' => 1));
+        }
+
         if ($session->has('panier')) {
             $panier = $session->get('panier');
         } else {
             $panier = false;
         }
-
-        $produits = $em->getRepository('EcommerceBundle:Produits')->findBy(array('disponible' => 1));
 
         return $this->render('EcommerceBundle:Default/produits/layout:produits.html.twig',
                 array('produits' => $produits, 'panier' => $panier));
