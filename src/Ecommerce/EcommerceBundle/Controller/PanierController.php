@@ -4,6 +4,8 @@ namespace Ecommerce\EcommerceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Ecommerce\EcommerceBundle\Entity\UtilisateursAdresses;
+use Ecommerce\EcommerceBundle\Form\UtilisateursAdressesType;
 
 class PanierController extends Controller
 {
@@ -80,7 +82,10 @@ class PanierController extends Controller
 
     public function livraisonAction()
     {
-        return $this->render('EcommerceBundle:Default/panier/layout:livraison.html.twig');
+        $entity = new UtilisateursAdresses();
+        $form = $this->createForm(new UtilisateursAdressesType(), $entity);
+
+        return $this->render('EcommerceBundle:Default/panier/layout:livraison.html.twig', array('form' => $form->createView()));
     }
 
     public function validationAction()

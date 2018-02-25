@@ -13,14 +13,24 @@ class UtilisateursAdressesType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('prenom')->add('telephone')->add('adresse')->add('cp')->add('pays')->add('ville')->add('complement')->add('utilisateur');
-    }/**
+        $builder->add('nom')
+                ->add('prenom')
+                ->add('telephone')
+                ->add('adresse')
+                ->add('cp')
+                ->add('pays')
+                ->add('ville')
+                ->add('complement')
+                //->add('utilisateur');
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Ecommerce\EcommerceBundle\Entity\UtilisateursAdresses'
+            'data_class' => 'Ecommerce\EcommerceBundle\Entity\UtilisateursAdresses',
         ));
     }
 
@@ -31,6 +41,4 @@ class UtilisateursAdressesType extends AbstractType
     {
         return 'ecommerce_ecommercebundle_utilisateursadresses';
     }
-
-
 }
