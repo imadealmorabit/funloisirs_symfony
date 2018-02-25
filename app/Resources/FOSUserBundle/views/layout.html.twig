@@ -1,16 +1,17 @@
-{% extends "::layout/layout.html.twig" %}
+{% extends "::layout/layout.html.twig" %}        
 
 {% block body %}
+<div class="container">
+    {% for type, messages in app.session.flashbag.all() %}
+        {% for message in messages %}
+            <div class="alert alert-{{ type }}">
+            <br>
+                <h3><center><strong>{{ message }}</strong></center></h3>
+            </div>
+        {% endfor %}
+    {% endfor %}
 
-            {% for type, messages in app.session.flashbag.all() %}
-                {% for message in messages %}
-                    <div class="flash-{{ type }}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endfor %}
-
-            {% block fos_user_content %}
-            {% endblock fos_user_content %}
-    
+    {% block fos_user_content %}
+    {% endblock fos_user_content %}
+</div>
 {% endblock %}
