@@ -1,21 +1,30 @@
 {% extends "::layout/layout.html.twig" %}
-{% block body %}
 
+{% set totalHT = 0 %}
+{% set totalTTC = 0%}
+{% set refTva = {} %}
+{% for produit in produits%}
+    {% set refTva = refTva|merge({ ('%' ~ produit.tva.valeur) : 0}) %}
+{% endfor%}
+
+
+
+{% block body %}
 <section id="main">
 
             <div class="header-page bg-scroll p-top-0" style="background-image:url(assets/img/bg/12.jpg) ">
 
                 <div class="container">
-                    <div class="header-page__inner">
-                        <h2 class="header-page__title">Pricing table</h2>
-                    </div>
+                   <div class="header-page__inner">
+                        <h2 class="header-page__title">Valider Mon Panier</h2>
+                   </div>
                 </div>
 
                 <div class="header-page__breadcrumb">
                     <div class="container">
                         <ol class="wo_breadcrumb">
                             <li><a href="#">Home</a></li>
-                            <li><span>Pricing table</span></li>
+                            <li><span>Panier</span></li>
                         </ol>
                     </div>
                 </div>
@@ -24,126 +33,155 @@
 
             </div>
 
-            <div class="section p-top-0 p-bottom-50">
+
+
+           
+
+            <div class="section wo_shop">
+
+
+            
 
                 <div class="container">
-                    
-                    <div class="row">
-                
-                        <div class="col-md-4">
 
-                            <div class="pricing">
-
-                                <div class="pricing__header bg-scroll" style="background-image: url(assets/img/pricing/1.jpg)">
-
-                                    <h4 class="pricing__title">Basic</h4>
-
-                                    <div class="pricing__price">Free</div>
-
-                                    <p class="pricing__desc">Standard listing submission, active for 30 days.</p>
-
-                                    <!-- <p class="pricing__remain_post">3/5 Number of post</p> -->
-
-                                    <div class="overlay" style="background-color: rgba(0,108,255, 0.6)"></div>
-
-                                </div>
-
-                                <div class="pricing__content">
-
-                                    <ul class="wil-icon-list">
-                                       <li><i class="icon_box-checked"></i> One Listing</li>
-                                       <li><i class="icon_box-checked"></i> 30 Days Availability</li>
-                                       <li><i class="icon_box-checked"></i> Standard Listing</li>
-                                       <li class="disable"><i class="icon_close_alt2"></i> Limited Support</li>
-                                   </ul>
-
-                                </div>
-
-                                <div class="pricing__foot">
-                                    <a href="#" class="listgo-btn btn-black listgo-btn--full">Get Now</a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                
-                        <div class="col-md-4">
-
-                            <div class="pricing">
-
-                                <div class="pricing__header bg-scroll" style="background-image: url(assets/img/pricing/2.jpg)">
-
-                                    <h4 class="pricing__title">Professional</h4>
-
-                                    <span class="pricing__price"><sup>$</sup>10.99</span>
-
-                                    <p class="pricing__desc">Standard listing submission, active for 30 days.</p>
-
-                                    <span class="onfeatued"><i class="fa fa-star-o"></i></span>
-
-                                    <div class="overlay" style="background-color: rgba(0,108,255, 0.6)"></div>
-
-                                </div>
-
-                                <div class="pricing__content">
-
-                                    <ul class="wil-icon-list">
-                                       <li><i class="icon_box-checked"></i> One Listing</li>
-                                       <li><i class="icon_box-checked"></i> 120 Days Availability</li>
-                                       <li><i class="icon_box-checked"></i> Standard Listing</li>
-                                       <li class="disable"><i class="icon_close_alt2"></i> Limited Support</li>
-                                   </ul>
-
-                                </div>
-
-                                <div class="pricing__foot">
-                                    <a href="#" class="listgo-btn btn-primary listgo-btn--full">Get Now</a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                
-                        <div class="col-md-4">
-
-                            <div class="pricing">
-
-                                <div class="pricing__header bg-scroll" style="background-image: url(assets/img/pricing/3.jpg)">
-
-                                    <h4 class="pricing__title">Bussiness</h4>
-
-                                    <span class="pricing__price"><sup>$</sup>20.99</span>
-
-                                    <p class="pricing__desc">Standard listing submission, active for 30 days.</p>
-
-                                    <div class="overlay" style="background-color: rgba(0,108,255, 0.6)"></div>
-
-                                </div>
-
-                                <div class="pricing__content">
-
-                                    <ul class="wil-icon-list">
-                                       <li><i class="icon_box-checked"></i> One Listing</li>
-                                       <li><i class="icon_box-checked"></i> 364 Days Availability</li>
-                                       <li><i class="icon_box-checked"></i> Standard Listing</li>
-                                       <li><i class="icon_box-checked"></i> Unlimited Support</li>
-                                   </ul>
-
-                                </div>
-
-                                <div class="pricing__foot">
-                                    <a href="#" class="listgo-btn btn-black listgo-btn--full">Get Now</a>
-                                </div>
-
-                            </div>
-                            
-                        </div>
-                
+                 {% for message in app.session.flashbag.get('success') %}
+                    <div class="alert alert-success">
+                        <center> {{ message }} </center>
                     </div>
-                
+                 {% endfor %}
+
+                    <table class="shop_table cart">
+
+                        <thead>
+                            <tr>
+                                <th class="product-thumbnail">&nbsp;</th>
+                                <th class="product-name">Produit</th>
+                                <th class="product-price">Prix unitaire</th>
+                                <th class="product-quantity">Quantite</th>
+                                <th class="product-subtotal">Total HT</th>
+                            </tr>
+                        </thead>
+
+                        {% if produits | length == 0 %}
+                            <tr>
+                                <td colspan="6"><h3><center>Aucune Carte dans votre panier</center></h3></td>
+                            <tr>
+                        {% endif %}
+
+                        {% for produit in produits %}
+
+                        <tr class="cart_item">
+
+                        <form action="{{path('ajouter', {'id': produit.id})}}" method="GET">
+
+        
+
+                            <td class="product-thumbnail">
+                                <a href="#"><img src= {{produit.image.path}} alt= {{produit.image.alt}}></a>                    
+                            </td>
+
+                            <td class="product-name" data-title="Product">
+                                <a href="#">{{produit.nom}}</a>                 
+                            </td>
+
+                            <td class="product-price">
+                                <span class="amount"><span>£</span>{{produit.prix}}</span>                   
+                            </td>
+
+                            <td class="product-quantity">
+
+                                      {{panier[produit.id] }}
+   
+                            </td>
+
+                            <td class="product-subtotal" data-title="Total">
+                                <span class="amount"><span>£</span>{{produit.prix * panier[produit.id]}}</span>                   
+                            </td>
+                        </form>
+                        </tr>
+
+                        {% set totalHT = totalHT + (produit.prix * panier[produit.id]) %}
+                        {% set totalTTC = totalTTC + (produit.prix * panier[produit.id]) | tva(produit.tva.multiplicate) %}
+                        {% set refTva = refTva|merge({ ('%' ~ produit.tva.valeur) : refTva['%' ~ produit.tva.valeur] + (produit.prix * panier[produit.id]) | montantTva(produit.tva.multiplicate)}) %}
+
+                        {% endfor %}
+
+                        
+
+                        
+
+                        <tr>
+                            <td colspan="6" class="actions">
+                                <div class="coupon">
+
+                                    <div class="wc-proceed-to-checkout">
+                                         <a href="{{path('livraison')}}" class="listgo-btn btn-primary">Payer</a>
+                                    </div>
+                                </div>
+            
+                                <a href="{{path('livraison')}}" class="button">Retour</a>
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                    
+
+                      
+
+                        <div class="cart_totals">
+    
+                            <h2>Totals</h2>
+
+                            <table class="shop_table">
+
+                                <tbody>
+
+                                    <tr class="cart-subtotal">
+                                        <th>Total HT</th>
+                                        <td data-title="Subtotal">
+                                            <span class="amount"><span>£</span>{{totalHT}}</span>
+                                        </td>
+                                    </tr>
+
+                                     {% for key,tva in refTva %}
+                                    <tr class="cart-subtotal">
+                                        <th>TVA {{key}} :</th>
+                                        <td data-title="Subtotal">
+                                            <span class="amount"><span>£</span>{{tva}}</span>
+                                        </td>                                 
+                                    </tr>
+                                     {% endfor %}
+
+                                    <tr class="order-total">
+                                        <th>Total TTC</th>
+
+                                        <td data-title="Total">
+                                            <strong>
+                                                <span class="amount"><span>£</span>{{totalTTC}}</span>
+                                            </strong> 
+                                        </td>
+                                    </tr>
+                                
+                                </tbody>
+
+                            </table>
+
+                           
+
+                        </div>
+
+                   
+
+                    </div>
+
                 </div>
 
             </div>
 
         </section>
-    {% endblock %}
+
+
+{% endblock %}
