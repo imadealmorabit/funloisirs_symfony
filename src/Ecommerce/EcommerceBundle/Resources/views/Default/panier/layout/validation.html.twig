@@ -110,26 +110,15 @@
 
                         
 
-                        <tr>
-                            <td colspan="6" class="actions">
-                                <div class="coupon">
-
-                                    <div class="wc-proceed-to-checkout">
-                                         <a href="{{path('livraison')}}" class="listgo-btn btn-primary">Payer</a>
-                                    </div>
-                                </div>
-            
-                                <a href="{{path('livraison')}}" class="button">Retour</a>
-
-                            </td>
-
-                        </tr>
-
+                      
                     </table>
 
-                    
 
-                      
+                    <div class="row">
+
+
+                    <div class="col-lg-6">
+
 
                         <div class="cart_totals">
     
@@ -172,7 +161,73 @@
                            
 
                         </div>
+                    </div>
+    
+               
 
+
+
+ <div class="col-lg-3">
+                <dl>
+                    <dt><h4>Adresse de livraison</h4></dt>
+                    <dt>{{ livraison.prenom }} {{livraison.nom }}</dt>
+                    <dt>{{ livraison.adresse }}</dt>
+                    <dt>{{ livraison.cp }} {{ livraison.ville }} - {{ livraison.pays }}</dt>
+                </dl>
+ </div>
+
+
+
+
+
+             <div class="col-lg-3">
+
+                <dl>
+                    <dt><h4>Adresse de facturation</h4></dt>
+                    <dt>{{facturation.prenom }} {{ facturation.nom }}</dt>
+                    <dt>{{facturation.adresse }}</dt>
+                    <dt>{{ facturation.cp }} {{ facturation.ville }} - {{facturation.pays }}</dt>
+                </dl>
+
+            </div>
+         </div>
+         <div class="row">
+
+             <div class="col-lg-6">
+
+                 <div class="coupon">
+
+                                    <div class="wc-proceed-to-checkout">
+                                         <a href="{{path('livraison')}}" class="listgo-btn btn-primary">Payer</a>
+                                    </div>
+                                </div>
+             </div>
+
+              <div class="col-lg-6">
+
+               <td colspan="6" class="actions">
+                               
+            
+                                <a href="{{path('livraison')}}" class="listgo-btn btn-primary">Retour</a>
+
+                            </td>
+                </div>
+</div>
+ </div>
+</div>
+
+
+
+  
+
+
+
+  
+
+
+ </div>
+
+        
                    
 
                     </div>

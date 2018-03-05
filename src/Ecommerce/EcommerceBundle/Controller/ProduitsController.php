@@ -39,9 +39,9 @@ class ProduitsController extends Controller
 
         if ($session->has('panier')) {
             $panier = $session->get('panier');
-        } else {
-            $panier = false;
         }
+
+        $panier = false;
 
         if (!$produit) {
             throw $this->createNotFoundException("la page n'existe pas. ");

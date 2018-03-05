@@ -80,6 +80,7 @@
 
                                 <p>{{produit.description}}</p>
 
+
                             {% if panier[produit.id] is not defined %}
 
                                 <form class="cart" action="{{ path('ajouter', { 'id' : produit.id }) }}" method="get">
