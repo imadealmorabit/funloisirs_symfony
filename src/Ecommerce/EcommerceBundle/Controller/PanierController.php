@@ -142,22 +142,13 @@ class PanierController extends Controller
     public function validationAction(Request $request)
     {
         if ($request->isMethod('POST')) {
-            $this->setLivraisonOnSession($request);
+            $this->setLivraisonOnSession();
         }
 
         $em = $this->getDoctrine()->getManager();
-        $session = $request->getSession();
-        $adresse = $session->get('adresse');
-        $produits = $em->getRepository('EcommerceBundle:Produits')->findArray(array_keys($session->get('panier')));
-        $livraison = $em->getRepository('EcommerceBundle:UtilisateursAdresses')->find($adresse['livraison']);
-        $facturation = $em->getRepository('EcommerceBundle:UtilisateursAdresses')->find($adresse['facturation']);
+        $prepareCommande = $this->forward('EcommerceBundle:Commandes:prepareCommande');
+        $commande = $em->getRepository('EcommerceBundle:Commandes')->find($prepareCommande->getContent());
 
-        //$prepareCommande = $this->forward('EcommerceBundle:Commandes:prepareCommande');
-        //$commande = $em->getRepository('EcommerceBundle:Commandes')->find($prepareCommande->getContent());
-
-        return $this->render('EcommerceBundle:Default:panier/layout/validation.html.twig', array('produits' => $produits,
-                                                                                                'livraison' => $livraison,
-                                                                                                'facturation' => $facturation,
-                                                                                                'panier' => $session->get('panier'), ));
+        return $this->render('EcommerceBundle:Default:panier/layout/validation.html.twig', array('commande' => $commande));
     }
 }
