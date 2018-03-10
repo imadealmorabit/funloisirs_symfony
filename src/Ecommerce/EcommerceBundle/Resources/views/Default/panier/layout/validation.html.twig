@@ -172,7 +172,17 @@
                  <div class="coupon">
 
                                     <div class="wc-proceed-to-checkout">
-                                         <a href="{{path('livraison')}}" class="listgo-btn btn-primary">Payer</a>
+
+
+                                    <form action="{{ path('validationCommande', { 'id' : commande.id }) }}" method="POST"/>
+                                        <input name="token" type="hidden" value="{{ commande.commande.token }}" />
+                                        <input name="prix" type="hidden" value="{{ commande.commande.prixTTC }}" />
+                                        <input name="date" type="hidden" value="{{ commande.date|date('dmyhms') }}" />
+                                        <button type="submit" class="listgo-btn btn-primary">Payer</button>
+                                    </form>
+
+
+                                       
                                     </div>
                                 </div>
              </div>
