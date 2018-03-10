@@ -1,0 +1,93 @@
+{% extends "::layout/layout.html.twig" %}
+
+{% block body %}
+
+
+<section id="main">
+
+            <div class="header-page bg-scroll p-top-0" style="background-image:url(assets/img/bg/12.jpg) ">
+
+                <div class="container">
+                   <div class="header-page__inner">
+                        <h2 class="header-page__title">Mes factures</h2>
+                   </div>
+                </div>
+
+                <div class="header-page__breadcrumb">
+                    <div class="container">
+                        <ol class="wo_breadcrumb">
+                            <li><a href="#">Home</a></li>
+                            <li><span>Factures</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="overlay" style="background-color: rgba(0,108,255, 0.6)"></div>
+
+            </div>
+
+
+
+           
+
+            <div class="section wo_shop">
+
+	 <div class="container">
+
+
+                     
+                {% for flashMessage in app.session.flashbag.get('success') %}
+                    <div class="alert alert-success">
+                        {{ flashMessage }}
+                    </div>
+                {% endfor %}
+
+                
+                {% for flashMessage in app.session.flashbag.get('error') %}
+                    <div class="alert alert-errors">
+                        {{ flashMessage }}
+                    </div>
+                {% endfor %}
+
+
+
+               
+
+                    <table class="shop_table cart">
+
+                        <thead>
+                            <tr>
+                                <th class="product-name">Références</th>
+                                <th class="product-price">Date</th>
+                                <th class="product-quantity">Prix TTC</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                         {% if factures|length == 0 %}
+                                <tr>
+                                    <td colspan="4"><center>Ancunne facture actuellement.</center></td>
+                                </tr>
+                        {% endif %}
+
+                        {% for facture in factures %}
+
+                             <tr>
+                                <td>ref : {{ facture.reference }}</td>
+                                <td>{{ facture.date|date('d/m/Y') }}</td>
+                                <td>{{ facture.commande.prixTTC }} €</td>
+                                <td><a href="{{ path('facturesPDF', { 'id' : facture.id }) }}" target="_blank"><i class="icon-refresh"></i></a></td>
+                            </tr>
+
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </form>
+    
+            </div>
+		
+		</div>
+    </div>
+    
+    {% endblock %}

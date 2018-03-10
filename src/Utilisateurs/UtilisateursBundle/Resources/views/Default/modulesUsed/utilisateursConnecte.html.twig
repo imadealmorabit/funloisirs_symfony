@@ -28,6 +28,13 @@
                         
                                              {{ render(controller("EcommerceBundle:Panier:menu")) }}
 
+                                              <li class="user__menu__item">
+                                                <a href="{{path('factures')}}">
+                                                    <i class="fa fa-list"></i>
+                                                    Mes factures
+                                                </a>
+                                            </li>
+
                                             <li class="user__menu__item">
                                                 <a href="{{path('fos_user_profile_edit')}}">
                                                     <i class="fa fa-edit"></i>

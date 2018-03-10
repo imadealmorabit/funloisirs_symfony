@@ -118,6 +118,6 @@ class CommandesController extends Controller
 
         $this->get('session')->getFlashBag()->add('success', 'Votre commande est validé avec succès');
 
-        return $this->redirect($this->generateUrl('produits'));
+        return $this->redirect($this->generateUrl('factures'));
     }
 }

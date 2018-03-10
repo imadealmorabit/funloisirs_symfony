@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Utilisateurs\UtilisateursBundle\Repository\UtilisateursRepository")
  * @ORM\Table(name="utilisateurs")
  */
 class Utilisateurs extends BaseUser
@@ -115,7 +115,7 @@ class Utilisateurs extends BaseUser
     }
 
     /**
-     * Set groupe
+     * Set groupe.
      *
      * @param \Ecommerce\EcommerceBundle\Entity\Groupe $groupe
      *
@@ -129,7 +129,7 @@ class Utilisateurs extends BaseUser
     }
 
     /**
-     * Get groupe
+     * Get groupe.
      *
      * @return \Ecommerce\EcommerceBundle\Entity\Groupe
      */
@@ -139,7 +139,7 @@ class Utilisateurs extends BaseUser
     }
 
     /**
-     * Add adress
+     * Add adress.
      *
      * @param \Ecommerce\EcommerceBundle\Entity\UtilisateursAdresses $adress
      *
@@ -153,7 +153,7 @@ class Utilisateurs extends BaseUser
     }
 
     /**
-     * Remove adress
+     * Remove adress.
      *
      * @param \Ecommerce\EcommerceBundle\Entity\UtilisateursAdresses $adress
      */
