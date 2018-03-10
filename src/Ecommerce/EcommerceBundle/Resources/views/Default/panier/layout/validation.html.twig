@@ -1,14 +1,5 @@
 {% extends "::layout/layout.html.twig" %}
 
-{% set totalHT = 0 %}
-{% set totalTTC = 0%}
-{% set refTva = {} %}
-{% for produit in produits%}
-    {% set refTva = refTva|merge({ ('%' ~ produit.tva.valeur) : 0}) %}
-{% endfor%}
-
-
-
 {% block body %}
 <section id="main">
 
@@ -44,17 +35,12 @@
 
                 <div class="container">
 
-                 {% for message in app.session.flashbag.get('success') %}
-                    <div class="alert alert-success">
-                        <center> {{ message }} </center>
-                    </div>
-                 {% endfor %}
+               
 
                     <table class="shop_table cart">
 
                         <thead>
                             <tr>
-                                <th class="product-thumbnail">&nbsp;</th>
                                 <th class="product-name">Produit</th>
                                 <th class="product-price">Prix unitaire</th>
                                 <th class="product-quantity">Quantite</th>
@@ -62,47 +48,35 @@
                             </tr>
                         </thead>
 
-                        {% if produits | length == 0 %}
-                            <tr>
-                                <td colspan="6"><h3><center>Aucune Carte dans votre panier</center></h3></td>
-                            <tr>
-                        {% endif %}
+                     
 
-                        {% for produit in produits %}
+                    {% for produit in commande.commande.produit %}
 
                         <tr class="cart_item">
 
-                        <form action="{{path('ajouter', {'id': produit.id})}}" method="GET">
-
-        
-
-                            <td class="product-thumbnail">
-                                <a href="#"><img src= {{produit.image.path}} alt= {{produit.image.alt}}></a>                    
-                            </td>
+                           
 
                             <td class="product-name" data-title="Product">
-                                <a href="#">{{produit.nom}}</a>                 
+                                <a href="#">{{produit.reference}}</a>                 
                             </td>
 
                             <td class="product-price">
-                                <span class="amount"><span>£</span>{{produit.prix}}</span>                   
+                                <span class="amount"><span>£</span>{{produit.prixHT}}</span>                   
                             </td>
 
                             <td class="product-quantity">
 
-                                      {{panier[produit.id] }}
+                                      {{produit.quantite }}
    
                             </td>
 
                             <td class="product-subtotal" data-title="Total">
-                                <span class="amount"><span>£</span>{{produit.prix * panier[produit.id]}}</span>                   
+                                <span class="amount"><span>£</span>{{produit.prixHT * produit.quantite}}</span>                   
                             </td>
-                        </form>
+
                         </tr>
 
-                        {% set totalHT = totalHT + (produit.prix * panier[produit.id]) %}
-                        {% set totalTTC = totalTTC + (produit.prix * panier[produit.id]) | tva(produit.tva.multiplicate) %}
-                        {% set refTva = refTva|merge({ ('%' ~ produit.tva.valeur) : refTva['%' ~ produit.tva.valeur] + (produit.prix * panier[produit.id]) | montantTva(produit.tva.multiplicate)}) %}
+                       
 
                         {% endfor %}
 
@@ -131,11 +105,11 @@
                                     <tr class="cart-subtotal">
                                         <th>Total HT</th>
                                         <td data-title="Subtotal">
-                                            <span class="amount"><span>£</span>{{totalHT}}</span>
+                                            <span class="amount"><span>£</span>{{commande.commande.prixHT}}</span>
                                         </td>
                                     </tr>
 
-                                     {% for key,tva in refTva %}
+                                     {% for key,tva in commande.commande.tva %}
                                     <tr class="cart-subtotal">
                                         <th>TVA {{key}} :</th>
                                         <td data-title="Subtotal">
@@ -149,7 +123,7 @@
 
                                         <td data-title="Total">
                                             <strong>
-                                                <span class="amount"><span>£</span>{{totalTTC}}</span>
+                                                <span class="amount"><span>£</span>{{commande.commande.prixTTC}}</span>
                                             </strong> 
                                         </td>
                                     </tr>
@@ -170,9 +144,9 @@
  <div class="col-lg-3">
                 <dl>
                     <dt><h4>Adresse de livraison</h4></dt>
-                    <dt>{{ livraison.prenom }} {{livraison.nom }}</dt>
-                    <dt>{{ livraison.adresse }}</dt>
-                    <dt>{{ livraison.cp }} {{ livraison.ville }} - {{ livraison.pays }}</dt>
+                    <dt>{{ commande.commande.livraison.prenom }} {{commande.commande.livraison.nom }}</dt>
+                    <dt>{{ commande.commande.livraison.adresse }}</dt>
+                    <dt>{{ commande.commande.livraison.cp }} {{ commande.commande.livraison.ville }} - {{ commande.commande.livraison.pays }}</dt>
                 </dl>
  </div>
 
@@ -184,9 +158,9 @@
 
                 <dl>
                     <dt><h4>Adresse de facturation</h4></dt>
-                    <dt>{{facturation.prenom }} {{ facturation.nom }}</dt>
-                    <dt>{{facturation.adresse }}</dt>
-                    <dt>{{ facturation.cp }} {{ facturation.ville }} - {{facturation.pays }}</dt>
+                    <dt>{{commande.commande.facturation.prenom }} {{ commande.commande.facturation.nom }}</dt>
+                    <dt>{{commande.commande.facturation.adresse }}</dt>
+                    <dt>{{ commande.commande.facturation.cp }} {{ commande.commande.facturation.ville }} - {{commande.commande.facturation.pays }}</dt>
                 </dl>
 
             </div>

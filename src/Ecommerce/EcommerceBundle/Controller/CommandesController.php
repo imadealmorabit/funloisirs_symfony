@@ -12,7 +12,7 @@ class CommandesController extends Controller
     public function facture(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $generator = $this->container->get('security.secure_random');
+        $generator = random_int(1, 20);
         $session = $request->getSession();
         $adresse = $session->get('adresse');
         $panier = $session->get('panier');
@@ -63,7 +63,7 @@ class CommandesController extends Controller
 
         $commande['prixHT'] = round($totalHT, 2);
         $commande['prixTTC'] = round($totalHT + $totalTVA, 2);
-        $commande['token'] = bin2hex($generator->nextBytes(20));
+        $commande['token'] = bin2hex($generator);
 
         return $commande;
     }
