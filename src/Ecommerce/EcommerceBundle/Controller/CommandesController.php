@@ -108,7 +108,7 @@ class CommandesController extends Controller
             throw $this->createNotFoundException('La commande n\'existe pas');
         }
         $commande->setValider(1);
-        $commande->setReference(1); //Service
+        $commande->setReference($this->container->get('setNewReference')->reference()); //Service
         $em->flush();
 
         $session = $request->getSession();

@@ -1,5 +1,10 @@
 services:
 
+    setNewReference:
+      class: Ecommerce\EcommerceBundle\Services\GetReference
+      arguments: 
+        - "@doctrine.orm.entity_manager"
+
     tva:
       class: Ecommerce\EcommerceBundle\Twig\Extension\TvaExtension
       tags:
