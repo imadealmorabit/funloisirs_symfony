@@ -5,7 +5,7 @@ namespace Ecommerce\EcommerceBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Commandes
+ * Commandes.
  *
  * @ORM\Table(name="commandes")
  * @ORM\Entity(repositoryClass="Ecommerce\EcommerceBundle\Repository\CommandesRepository")
@@ -50,13 +50,12 @@ class Commandes
     /**
      * @var array
      *
-     * @ORM\Column(name="produits", type="array")
+     * @ORM\Column(name="commande", type="array")
      */
-    private $produits;
-
+    private $commande;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -66,9 +65,9 @@ class Commandes
     }
 
     /**
-     * Set valider
+     * Set valider.
      *
-     * @param boolean $valider
+     * @param bool $valider
      *
      * @return Commandes
      */
@@ -80,7 +79,7 @@ class Commandes
     }
 
     /**
-     * Get valider
+     * Get valider.
      *
      * @return bool
      */
@@ -90,7 +89,7 @@ class Commandes
     }
 
     /**
-     * Set date
+     * Set date.
      *
      * @param \DateTime $date
      *
@@ -104,7 +103,7 @@ class Commandes
     }
 
     /**
-     * Get date
+     * Get date.
      *
      * @return \DateTime
      */
@@ -114,9 +113,9 @@ class Commandes
     }
 
     /**
-     * Set reference
+     * Set reference.
      *
-     * @param integer $reference
+     * @param int $reference
      *
      * @return Commandes
      */
@@ -128,7 +127,7 @@ class Commandes
     }
 
     /**
-     * Get reference
+     * Get reference.
      *
      * @return int
      */
@@ -138,31 +137,31 @@ class Commandes
     }
 
     /**
-     * Set produits
+     * Set commande.
      *
-     * @param array $produits
+     * @param array $commande
      *
      * @return Commandes
      */
-    public function setProduits($produits)
+    public function setCommande($commande)
     {
-        $this->produits = $produits;
+        $this->commande = $commande;
 
         return $this;
     }
 
     /**
-     * Get produits
+     * Get commande.
      *
      * @return array
      */
-    public function getProduits()
+    public function getCommande()
     {
-        return $this->produits;
+        return $this->commande;
     }
 
     /**
-     * Set utilisateur
+     * Set utilisateur.
      *
      * @param \Utilisateurs\UtilisateursBundle\Entity\Utilisateurs $utilisateur
      *
@@ -176,7 +175,7 @@ class Commandes
     }
 
     /**
-     * Get utilisateur
+     * Get utilisateur.
      *
      * @return \Utilisateurs\UtilisateursBundle\Entity\Utilisateurs
      */
