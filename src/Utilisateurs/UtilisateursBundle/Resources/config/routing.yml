@@ -5,3 +5,4 @@ factures:
 facturesPDF:
     path: /profile/factures/pdf/{id}
     defaults: { _controller: UtilisateursBundle:Utilisateurs:facturesPDF }
+
