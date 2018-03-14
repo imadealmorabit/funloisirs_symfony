@@ -40,6 +40,12 @@ class Produits
     private $tva;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Participations", cascade={"persist","remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $participation;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
@@ -244,5 +250,29 @@ class Produits
     public function getTva()
     {
         return $this->tva;
+    }
+
+    /**
+     * Set participation
+     *
+     * @param \Ecommerce\EcommerceBundle\Entity\Participations $participation
+     *
+     * @return Produits
+     */
+    public function setParticipation(\Ecommerce\EcommerceBundle\Entity\Participations $participation)
+    {
+        $this->participation = $participation;
+
+        return $this;
+    }
+
+    /**
+     * Get participation
+     *
+     * @return \Ecommerce\EcommerceBundle\Entity\Participations
+     */
+    public function getParticipation()
+    {
+        return $this->participation;
     }
 }
