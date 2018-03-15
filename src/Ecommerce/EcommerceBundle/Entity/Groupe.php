@@ -51,7 +51,6 @@ class Groupe
 
     /**
      * @ORM\ManyToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Ports", cascade={"persist","remove"})
-     * @ORM\JoinColumn(nullable=false)
      */
     private $port;
 

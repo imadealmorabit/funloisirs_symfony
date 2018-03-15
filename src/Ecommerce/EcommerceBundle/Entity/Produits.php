@@ -41,7 +41,6 @@ class Produits
 
     /**
      * @ORM\ManyToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Participations", cascade={"persist","remove"})
-     * @ORM\JoinColumn(nullable=false)
      */
     private $participation;
 

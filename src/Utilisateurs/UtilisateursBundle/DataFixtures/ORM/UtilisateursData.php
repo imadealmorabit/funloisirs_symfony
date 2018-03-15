@@ -72,6 +72,6 @@ class UtilisateursData extends AbstractFixture implements FixtureInterface, Cont
 
     public function getOrder()
     {
-        return 6;
+        return 9;
     }
 }

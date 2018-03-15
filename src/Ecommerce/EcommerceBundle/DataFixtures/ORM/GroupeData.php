@@ -24,11 +24,16 @@ class GroupeData extends AbstractFixture implements FixtureInterface, ContainerA
         $groupe1 = new Groupe();
         $groupe1->setNom('RAM2018');
         $groupe1->setCode('fun13');
+        $groupe1->setTypeGroupe('CE');
+        $groupe1->setTypeAdhesion('AI');
+        $groupe1->setPort($this->getReference('port1'));
         $manager->persist($groupe1);
 
         $groupe2 = new Groupe();
         $groupe2->setNom('OCP2018');
         $groupe2->setCode('fun14');
+        $groupe2->setTypeGroupe('CE');
+        $groupe2->setTypeAdhesion('AF');
         $manager->persist($groupe2);
 
         $manager->flush();
@@ -39,6 +44,6 @@ class GroupeData extends AbstractFixture implements FixtureInterface, ContainerA
 
     public function getOrder()
     {
-        return 5;
+        return 8;
     }
 }
