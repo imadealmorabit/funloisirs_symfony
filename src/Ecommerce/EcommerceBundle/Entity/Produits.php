@@ -23,19 +23,16 @@ class Produits
 
     /**
      * @ORM\OneToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Media", cascade={"persist","remove"})
-     * @ORM\JoinColumn(nullable=false)
      */
     private $image;
 
     /**
      * @ORM\ManyToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Categories", cascade={"persist","remove"})
-     * @ORM\JoinColumn(nullable=false)
      */
     private $categorie;
 
     /**
      * @ORM\ManyToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Tva", cascade={"persist","remove"})
-     * @ORM\JoinColumn(nullable=false)
      */
     private $tva;
 
@@ -54,6 +51,13 @@ class Produits
     /**
      * @var string
      *
+     * @ORM\Column(name="type", type="string", length=255)
+     */
+    private $type;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="description", type="text")
      */
     private $description;
@@ -68,7 +72,7 @@ class Produits
     /**
      * @var bool
      *
-     * @ORM\Column(name="disponible", type="boolean")
+     * @ORM\Column(name="disponible", type="boolean", nullable=true)
      */
     private $disponible;
 
@@ -273,5 +277,29 @@ class Produits
     public function getParticipation()
     {
         return $this->participation;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     *
+     * @return Produits
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

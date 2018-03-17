@@ -1,0 +1,8 @@
+cartes:
+    path:  /
+    defaults: { _controller: EcommerceBundle:Cartes:cartes }
+
+membre:
+    path:  /membre
+    defaults: { _controller: EcommerceBundle:Cartes:membreTraitement }
+

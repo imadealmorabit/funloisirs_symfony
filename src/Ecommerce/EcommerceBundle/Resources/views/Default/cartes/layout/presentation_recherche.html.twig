@@ -1,0 +1,172 @@
+{% extends "::layout/layout.html.twig" %}
+{% block body %}
+
+
+
+<section id="main">
+
+            <div class="header-page bg-scroll p-top-0">
+
+                <div class="header-page__breadcrumb">
+                    <div class="container">
+                        <ol class="wo_breadcrumb">
+                            <li><a href="#">Home</a></li>
+                            <li><span>Shop</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="overlay" style="background-color: #323233"></div>
+
+            </div>
+            {% for produit in produits %}
+
+            <div class="section p-top-10 wo_shop">
+
+                <div class="container">
+
+                    <div class="shop">
+
+                        <div class="product">
+
+                            <div class="images">
+
+                                <a href="#" class="woocommerce-main-image">
+                                    <img src="{{produit.image.path}}" alt="{{produit.image.alt}}">
+                                </a>
+
+                                <div class="thumbnails">
+
+                                    <a href="#">
+                                        <img src="assets/img/shop/1.jpg" alt="">
+                                    </a>
+
+                                    <a href="#">
+                                        <img src="assets/img/shop/2.jpg" alt="">
+                                    </a>
+
+                                    <a href="#">
+                                        <img src="assets/img/shop/3.jpg" alt="">
+                                    </a>
+
+                                </div>
+
+                            </div>   
+
+                            <div class="summary entry-summary">
+
+                                <h1 class="product_title">{{produit.nom}}</h1>
+
+                                <div class="woocommerce-product-rating">
+
+                                    <div class="star-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+
+                                    <a href="#" class="woocommerce-review-link" >(<span class="count">2</span> customer reviews)</a>  
+
+                                </div>
+
+                                <p class="price">
+                                    <span class=" amount"><span>£</span>{{produit.prix}}</span>
+                                </p>
+
+                                <p>{{produit.description}}</p>
+
+                                <form class="cart" method="post" enctype="multipart/form-data" action="{{path('panier')}}">
+        
+                                    <div class="quantity">
+                                        <input type="text" step="1" min="1" max="" name="quantity" value="1" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+
+                                    <button type="submit" class="single_add_to_cart_button button alt">Add to cart</button>
+
+                                </form>
+
+                                <div class="product_meta">
+
+                                    <span class="posted_in">
+                                        <span>Categories:</span>
+                                        <a href="#">{{produit.categorie.nom}}</a>
+                                    </span>
+                                    
+                                </div>
+
+                                <div class="product_share">
+                                    <span>Share:</span>
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                </div>
+
+                            </div>
+
+                            <div class="woocommerce-tabs wc-tabs-wrapper tab tab--2">
+                                <ul class="tabs wc-tabs tab__nav">
+                                    <li class="active"><a href="#tab-description">Description</a></li>
+                                    <li><a href="#tab-reviews">Review &amp; Rating</a></li>
+                                </ul>
+                                <div class="tab__content">
+                                    <div class="tab__panel active" id="tab-description">
+                                        <p>{{produit.description}}</p>
+                                    </div>
+                                    <div class="tab__panel" id="tab-reviews">
+                                        Review
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="related">
+
+                                <h2>Related Products</h2>
+
+                                <div class="products">
+                                
+                                    <div class="row">
+
+                                    {% for i in 0..3 %}
+                                                            
+                                        <div class="col-sm-6 col-md-4 col-lg-3">
+                                    
+                                            <div class="product-item">
+                                    
+                                                <div class="product__media">
+                                                    <a href="#"><img src="{{asset('assets/img/shop/1.jpg')}}" alt=""></a>
+                                                    <span class="onsale">Sale!</span>
+                                                    <a href="{{path('panier')}}" class="add_to_cart_button">Add To Cart</a>
+                                                </div>
+                                    
+                                                <h2 class="product__title">Three Forks Shelter</h2>
+                                    
+                                                <span class="price">
+                                                    <span class="amount">
+                                                        <span>£</span>99.00
+                                                    </span>
+                                                </span>
+                                    
+                                            </div>
+                                    
+                                        </div>
+                                         {% endfor %}                               
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+             {% endfor %}
+
+        </section>
+
+
+{% endblock %}

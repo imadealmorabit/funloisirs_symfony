@@ -1,0 +1,110 @@
+{% extends "::layout/layout.html.twig" %}
+
+
+
+
+{% block body %}
+
+
+
+
+<section id="main">
+
+            <div class="header-page bg-scroll m-bottom-0">
+
+                <div class="container">
+
+                    <div class="header-page__form header-page__form--high">
+
+
+
+<div class="wrapper-blanc"></div>
+		<section>
+			<div class="page clearfix">
+				<section id="content" class="twelve column" style="margin-bottom:20px;">
+	<h2>Commandez votre carte FunLoisirs4You &agrave; tarif pr&eacute;f&eacute;rentiel !</h2>	<style type="text/css">
+	.grisread { color:#999; /*background-color: #F0F0F0;*/ }
+	</style>
+
+				
+			
+			<div class="clearfix" style="text-align:center">
+				<img src="{{asset('assets/img/carte-25.jpg')}}" width="200" />
+			</div>
+			
+						<form name="form1" method="post" action="index.php?page=commander-la-carte">
+				<table width="60%" align="center">
+					<tr>
+						<td width="50%" height="36" align="left" valign="middle" style="padding-right:0px;">
+							<input type="radio" name="cart" value="1" />
+								<b>Individuel</b> - 18 &euro; par carte
+								</td>
+						<td align="left" valign="middle" style="padding-left:0px">
+							<input type="radio" name="cart" value="2"  />
+								<b>Etudiant</b> - 10 &euro;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1 carte maximum)
+								</td>
+					</tr>
+					<tr> </tr>
+					<tr>
+						<td valign="middle" align="left">
+							<input type="radio" name="cart" value="3"  />
+								<b>Pack Couple</b> - 28 &euro;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2 cartes)<br />&nbsp;
+								</td>
+						<td valign="middle" align="left" style="padding-left:0px">
+							<input type="radio" name="cart" value="4" />
+								<b>Pack Famille</b>  - 40 &euro;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3 &agrave; 4 cartes maximum)
+								</td>
+					</tr>
+					<tr>
+						<td valign="middle" align="center" colspan="2">Nombre de cartes : <input type="text" name="quantite" value="" style=" width:50px" /></td>
+					</tr>
+					
+					<tr>
+						<td valign="middle" align="left" colspan="2"><h4>Option e-Carte : 2&euro;/carte (<a href="javascript:void(0);" id="ecarte-infos">Qu'est-ce que la e-Carte ?</a>)</h4><br />
+						<input type="checkbox" id="option-ecarte" name="optionecarte" value="1" > <label for="option-ecarte">Je souhaite profiter de la e-Carte</label></td>
+					</tr>
+					
+					<tr>
+						<td valign="middle" align="center" ><input name="dActionEtape2_2" type="submit" value="Valider" class="bouton" /></td>
+					</tr>
+				</table>
+			</form>
+            <br> <br> <br> <br> <br>
+			<script>
+				$( "#ecarte-infos" ).click(function() {
+					$.colorbox({inline:true, width:"50%", href:"#popMessage"});
+				});
+			</script>
+	   
+			<div style='display:none'>
+				<div id='popMessage' style='padding:10px; background:#fff;'>
+				<h3>Qu'est-ce que la e-Carte ?</h3>
+				<p style="font-size:14px;  line-height: 19px;">Acc&eacute;dez directement aux pistes de ski fran&ccedil;aises sans passer par les Caisses !<br /><br />Plus de file d'attente ! Plus facile, Plus Rapide.<br /><br />De la commande en ligne &agrave; la piste de ski ! B&eacute;n&eacute;ficiez de tarif pr&eacute;f&eacute;rentiel exclusif dans les stations de ski en France pour toute commande en ligne de forfaits remont&eacute;es m&eacute;caniques, et acc&eacute;der aux pistes sans passer par les caisses et ainsi plus de file d'attente. Un vrai service de faveur. En plus la e-Carte Ski permet &agrave; la location de chalets, h&ocirc;tels, r&eacute;sidences, mat&eacute;riel, assurances dans plus de 250 stations en Europe soit plus de 2000 fournisseurs r&eacute;f&eacute;renc&eacute;s.</p>
+				<div style="text-align: center;"><img src="{{asset('assets/img/cadres-ski.png')}}"></div>
+				</div>
+			</div>
+			</section>
+			</div>
+		</section>
+		<div class="push"></div>
+	</div>
+
+     </div>        
+                </div>
+            </div>
+          
+            
+           
+            
+            
+           
+
+        </section>
+
+
+
+
+
+{% endblock %}
+
+ 

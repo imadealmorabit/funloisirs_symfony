@@ -13,6 +13,7 @@ class ProduitsData extends AbstractFixture implements OrderedFixtureInterface
     {
         $produit1 = new Produits();
         $produit1->setCategorie($this->getReference('categorie1'));
+        $produit1->setType('offre');
         $produit1->setDescription("Le poivron rouge est un groupe de cultivars de l'espèce Capsicum annuum.");
         $produit1->setDisponible('1');
         $produit1->setImage($this->getReference('media3'));
@@ -24,6 +25,7 @@ class ProduitsData extends AbstractFixture implements OrderedFixtureInterface
 
         $produit2 = new Produits();
         $produit2->setCategorie($this->getReference('categorie1'));
+        $produit2->setType('offre');
         $produit2->setDescription('Piment est généralement associé à la saveur du piquant (pimenté).');
         $produit2->setDisponible('1');
         $produit2->setImage($this->getReference('media4'));
@@ -35,6 +37,7 @@ class ProduitsData extends AbstractFixture implements OrderedFixtureInterface
 
         $produit3 = new Produits();
         $produit3->setCategorie($this->getReference('categorie1'));
+        $produit3->setType('offre');
         $produit3->setDescription("La tomate est une espèce de plantes herbacées de la famille des Solanacées, originaire du nord-ouest de l'Amérique du Sud.");
         $produit3->setDisponible('1');
         $produit3->setImage($this->getReference('media5'));
@@ -45,6 +48,7 @@ class ProduitsData extends AbstractFixture implements OrderedFixtureInterface
 
         $produit4 = new Produits();
         $produit4->setCategorie($this->getReference('categorie1'));
+        $produit4->setType('offre');
         $produit4->setDescription("Le poivron vert est un groupe de cultivars de l'espèce Capsicum annuum.");
         $produit4->setDisponible('1');
         $produit4->setImage($this->getReference('media6'));
@@ -55,6 +59,7 @@ class ProduitsData extends AbstractFixture implements OrderedFixtureInterface
 
         $produit5 = new Produits();
         $produit5->setCategorie($this->getReference('categorie2'));
+        $produit5->setType('offre');
         $produit5->setDescription('Le raisin est le fruit de la Vigne. Le raisin de la vigne cultivée Vitis vinifera est un des fruits les plus cultivés au monde, avec 68 millions de tonnes produites en 2010.');
         $produit5->setDisponible('1');
         $produit5->setImage($this->getReference('media7'));
@@ -65,6 +70,7 @@ class ProduitsData extends AbstractFixture implements OrderedFixtureInterface
 
         $produit6 = new Produits();
         $produit6->setCategorie($this->getReference('categorie2'));
+        $produit6->setType('offre');
         $produit6->setDescription("L’orange est un agrume, fruit des orangers, des arbres de différentes espèces de la famille des Rutacées ou d'hybrides de ceux-ci.");
         $produit6->setDisponible('1');
         $produit6->setImage($this->getReference('media8'));
