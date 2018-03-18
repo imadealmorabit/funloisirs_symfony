@@ -38,11 +38,9 @@ class UtilisateursController extends Controller
         $html2pdf->pdf->SetDisplayMode('real'); */
 
         $html2pdf = $this->get('html2pdf_factory')->create('P', 'A4', 'fr', true, 'UTF-8', array(10, 15, 10, 15));
-        
-        $html2pdf->writeHTML($html);
-        $html2pdf->Output('Facture.pdf'); 
 
-        
+        $html2pdf->writeHTML($html);
+        $html2pdf->Output('Facture.pdf');
 
         $response = new Response();
         $response->headers->set('Content-type', 'application/pdf');

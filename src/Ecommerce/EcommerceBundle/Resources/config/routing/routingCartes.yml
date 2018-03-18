@@ -1,6 +1,6 @@
-cartes:
-    path:  /
-    defaults: { _controller: EcommerceBundle:Cartes:cartes }
+AjouterCarte:
+    path:  /ajouter/{id}
+    defaults: { _controller: EcommerceBundle:Cartes:ajouterCarte }
 
 membre:
     path:  /membre

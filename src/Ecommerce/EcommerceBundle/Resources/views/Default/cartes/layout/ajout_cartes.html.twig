@@ -31,34 +31,42 @@
 			<div class="clearfix" style="text-align:center">
 				<img src="{{asset('assets/img/carte-25.jpg')}}" width="200" />
 			</div>
-						
-						<form name="form1" method="get" action="{{ path('AjouterCarte', {'id': groupe.id}) }}">
-				<table width="60%" align="center">
-				 {% for key,prix in groupe.typeAdhesion %}
-					<tr>
+			
+					
+            <br> <br> <br> 
 
-						<td align="left" valign="middle" style="padding-left:0px">
-							<input type="radio" name="typeCart" value={{key}}  />
-								<b>{{key}}</b> - {{prix}} &euro;<br />
-						</td>
+
+			
+			<form name="form1" method="post" action="index.php?page=commander-la-carte">
+				<table width="100%" border="0" align="center" cellpadding="5" cellspacing="0">
+										<tr>
+							{% for i in 1.. carte.qte %}
+						
+
+						<td colspan="3" align="left"><h4>Carte n&deg;{{i}}</h4></td>
 					</tr>
-				{% endfor %}
-					
 					<tr>
-						<td valign="middle" align="center" colspan="2">Nombre de cartes : <input type="text" name="qte" value="" style=" width:50px" /></td>
+						<td width="150" align="right"><strong>Nom :</strong></td>
+						<td width="20" colspan="2" align="left"><input name="nom_0" type="text" class="casetexte " value="" size="35" />
+							</td>
 					</tr>
-					
 					<tr>
-						<td valign="middle" align="left" colspan="2"><h4>Option e-Carte : 2&euro;/carte (<a href="javascript:void(0);" id="ecarte-infos">Qu'est-ce que la e-Carte ?</a>)</h4><br />
-						<input type="checkbox" id="option-ecarte" name="optionecarte" value="1" > <label for="option-ecarte">Je souhaite profiter de la e-Carte</label></td>
+						<td align="right"><strong>Pr&eacute;nom :</strong></td>
+						<td colspan="2" align="left"><input name="prenom_0" type="text" class="casetexte " value="" size="35" />
+							</td>
 					</tr>
-					
-					<tr>
-						<td valign="middle" align="center" ><input name="dActionEtape2_2" type="submit" value="Valider" class="bouton" /></td>
-					</tr>
+							{% endfor %}
+				
 				</table>
+				<div align="center">
+					<input name="dActionEtape3" type="submit" value="Passer la commande" class="bouton" style="margin-top:10px;"/>
+				</div>
 			</form>
-            <br> <br> <br> <br> <br>
+
+
+			
+			
+			<br> <br><br> <br>
 			<script>
 				$( "#ecarte-infos" ).click(function() {
 					$.colorbox({inline:true, width:"50%", href:"#popMessage"});
