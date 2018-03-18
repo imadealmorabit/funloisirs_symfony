@@ -45,13 +45,12 @@ class Groupe
     /**
      * @var string
      *
-     * @ORM\Column(name="type_adhesion", type="string", length=255)
+     * @ORM\Column(name="type_adhesion", type="array")
      */
     private $typeAdhesion;
 
     /**
      * @ORM\ManyToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Ports", cascade={"persist","remove"})
-     * @ORM\JoinColumn(nullable=false)
      */
     private $port;
 
@@ -113,5 +112,54 @@ class Groupe
     {
         return $this->code;
     }
-}
 
+    /**
+     * Set typeGroupe
+     *
+     * @param string $typeGroupe
+     *
+     * @return Groupe
+     */
+    public function setTypeGroupe($typeGroupe)
+    {
+        $this->typeGroupe = $typeGroupe;
+
+        return $this;
+    }
+
+    /**
+     * Get typeGroupe
+     *
+     * @return string
+     */
+    public function getTypeGroupe()
+    {
+        return $this->typeGroupe;
+    }
+
+    
+
+    /**
+     * Set port
+     *
+     * @param \Ecommerce\EcommerceBundle\Entity\Ports $port
+     *
+     * @return Groupe
+     */
+    public function setPort(\Ecommerce\EcommerceBundle\Entity\Ports $port)
+    {
+        $this->port = $port;
+
+        return $this;
+    }
+
+    /**
+     * Get port
+     *
+     * @return \Ecommerce\EcommerceBundle\Entity\Ports
+     */
+    public function getPort()
+    {
+        return $this->port;
+    }
+}

@@ -25,7 +25,11 @@ class GroupeData extends AbstractFixture implements FixtureInterface, ContainerA
         $groupe1->setNom('RAM2018');
         $groupe1->setCode('fun13');
         $groupe1->setTypeGroupe('CE');
-        $groupe1->setTypeAdhesion('AI');
+        $groupe1->setTypeAdhesion(array('Individuel' => '18',
+                                        'Etudiant' => '10',
+                                        'Pack Couple' => '28',
+                                        'Pack Famille' => '40',
+                                ));
         $groupe1->setPort($this->getReference('port1'));
         $manager->persist($groupe1);
 
@@ -33,7 +37,10 @@ class GroupeData extends AbstractFixture implements FixtureInterface, ContainerA
         $groupe2->setNom('OCP2018');
         $groupe2->setCode('fun14');
         $groupe2->setTypeGroupe('CE');
-        $groupe2->setTypeAdhesion('AF');
+        $groupe2->setTypeAdhesion(array('Individuel' => '18',
+                                         'Pack Couple' => '28',
+                                        'Pack Famille' => '40',
+                                ));
         $manager->persist($groupe2);
 
         $manager->flush();

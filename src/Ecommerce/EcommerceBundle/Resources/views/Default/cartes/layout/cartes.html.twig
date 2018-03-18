@@ -34,27 +34,16 @@
 			
 						<form name="form1" method="post" action="index.php?page=commander-la-carte">
 				<table width="60%" align="center">
+				 {% for key,prix in groupe.typeAdhesion %}
 					<tr>
-						<td width="50%" height="36" align="left" valign="middle" style="padding-right:0px;">
-							<input type="radio" name="cart" value="1" />
-								<b>Individuel</b> - 18 &euro; par carte
-								</td>
+
 						<td align="left" valign="middle" style="padding-left:0px">
-							<input type="radio" name="cart" value="2"  />
-								<b>Etudiant</b> - 10 &euro;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1 carte maximum)
-								</td>
+							<input type="radio" name="cart" value={{key}}  />
+								<b>{{key}}</b> - {{prix}} &euro;<br />
+						</td>
 					</tr>
-					<tr> </tr>
-					<tr>
-						<td valign="middle" align="left">
-							<input type="radio" name="cart" value="3"  />
-								<b>Pack Couple</b> - 28 &euro;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2 cartes)<br />&nbsp;
-								</td>
-						<td valign="middle" align="left" style="padding-left:0px">
-							<input type="radio" name="cart" value="4" />
-								<b>Pack Famille</b>  - 40 &euro;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3 &agrave; 4 cartes maximum)
-								</td>
-					</tr>
+				{% endfor %}
+					
 					<tr>
 						<td valign="middle" align="center" colspan="2">Nombre de cartes : <input type="text" name="quantite" value="" style=" width:50px" /></td>
 					</tr>

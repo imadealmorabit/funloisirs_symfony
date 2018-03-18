@@ -45,7 +45,7 @@ class Groupe
     /**
      * @var string
      *
-     * @ORM\Column(name="type_adhesion", type="string", length=255)
+     * @ORM\Column(name="type_adhesion", type="array")
      */
     private $typeAdhesion;
 
@@ -137,29 +137,7 @@ class Groupe
         return $this->typeGroupe;
     }
 
-    /**
-     * Set typeAdhesion
-     *
-     * @param string $typeAdhesion
-     *
-     * @return Groupe
-     */
-    public function setTypeAdhesion($typeAdhesion)
-    {
-        $this->typeAdhesion = $typeAdhesion;
-
-        return $this;
-    }
-
-    /**
-     * Get typeAdhesion
-     *
-     * @return string
-     */
-    public function getTypeAdhesion()
-    {
-        return $this->typeAdhesion;
-    }
+    
 
     /**
      * Set port
@@ -183,5 +161,29 @@ class Groupe
     public function getPort()
     {
         return $this->port;
+    }
+
+    /**
+     * Set typeAdhesion
+     *
+     * @param array $typeAdhesion
+     *
+     * @return Groupe
+     */
+    public function setTypeAdhesion($typeAdhesion)
+    {
+        $this->typeAdhesion = $typeAdhesion;
+
+        return $this;
+    }
+
+    /**
+     * Get typeAdhesion
+     *
+     * @return array
+     */
+    public function getTypeAdhesion()
+    {
+        return $this->typeAdhesion;
     }
 }

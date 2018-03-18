@@ -9,31 +9,8 @@ use Ecommerce\EcommerceBundle\Form\GroupeType;
 
 class CartesController extends Controller
 {
-    public function cartesAction()
-    {
-        return $this->render('EcommerceBundle:Default/cartes/layout:cartes.html.twig');
-    }
-
-    public function presentationAction($id, Request $request)
-    {
-        $session = $request->getSession();
-        $em = $this->getDoctrine()->getManager();
-        $produit = $em->getRepository('EcommerceBundle:Produits')->find($id);
-
-        if ($session->has('panier')) {
-            $panier = $session->get('panier');
-        }
-
-        $panier = false;
-
-        if (!$produit) {
-            throw $this->createNotFoundException("la page n'existe pas. ");
-        }
-
-        return $this->render('EcommerceBundle:Default/produits/layout:presentation.html.twig',
-                array('produit' => $produit, 'panier' => $panier));
-    }
-
+   
+   
     public function membreAction()
     {
         $form = $this->createForm(GroupeType::class, new Groupe());
