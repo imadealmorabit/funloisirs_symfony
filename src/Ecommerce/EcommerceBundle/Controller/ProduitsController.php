@@ -42,7 +42,7 @@ class ProduitsController extends Controller
         if ($session->has('panier')) {
             $panier = $session->get('panier');
         }
-
+            
         $panier = false;
 
         if (!$produit) {
